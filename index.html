@@ -7,21 +7,18 @@
   <meta name="description" content="SunCoast Tech Support in Tampa Bay. Two simple options: Device Cleanup (migrations, secure wipe, recycling) or Troubleshooting (break-fix). Book in minutes." />
 
   <style>
-    /* ========= THEME =========
-       If you want perfect brand matching: adjust these 3 vars to match your logo.
-       Tip: sample your logo in Canva/Photoshop and paste the hex codes here. */
     :root{
       --bg:#070b14;
       --panel:#0f1a33;
       --text:#e9eef7;
       --muted:#97a3b6;
 
-      /* Brand accents (defaults: modern ocean + electric) */
+      /* Brand accents – adjust to match your logo */
       --accent:#0fb8ff;   /* primary */
       --accent2:#5a5cff;  /* secondary */
       --accent3:#00d18f;  /* success */
 
-      --border: rgba(255,255,255,.10);
+      --border: rgba(255,255,255,.12);
       --radius:18px;
       --max:1100px;
       --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -29,13 +26,12 @@
     }
 
     *{ box-sizing:border-box; }
-
     body{
       margin:0;
       font-family:var(--font);
       background:
-        radial-gradient(900px 520px at 14% 10%, color-mix(in srgb, var(--accent2) 22%, transparent), transparent 58%),
-        radial-gradient(760px 460px at 86% 18%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 56%),
+        radial-gradient(900px 520px at 14% 10%, rgba(90,92,255,.22), transparent 58%),
+        radial-gradient(760px 460px at 86% 18%, rgba(15,184,255,.20), transparent 56%),
         linear-gradient(180deg, #050814, var(--bg));
       color:var(--text);
       line-height:1.5;
@@ -50,51 +46,31 @@
       background: rgba(5,8,20,.68);
       border-bottom:1px solid var(--border);
     }
-
     .nav{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 24px; max-width:var(--max); margin:0 auto; gap:12px;
     }
-
-    .brand{
-      display:flex; gap:10px; align-items:center; font-weight:800;
-      letter-spacing:.2px;
-    }
-
+    .brand{ display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.2px; }
     .logo-img{
       width:34px; height:34px; max-width:34px; max-height:34px;
       object-fit:contain; display:block;
       filter: drop-shadow(0 10px 22px rgba(0,0,0,.35));
     }
-
-    .tag{ font-size:12px; color:var(--muted); font-weight:500; }
+    .tag{ font-size:12px; color:var(--muted); }
 
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.06);
-      font-weight:700;
-      cursor:pointer;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px; border:1px solid var(--border);
+      background: rgba(255,255,255,.06); font-weight:700; cursor:pointer;
       transition: transform .06s ease, background .15s ease, border-color .15s ease;
       white-space:nowrap;
     }
-
     .btn:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
-
     .btn.primary{
-      border-color: color-mix(in srgb, var(--accent) 45%, rgba(255,255,255,.12));
-      background: linear-gradient(135deg,
-        color-mix(in srgb, var(--accent) 26%, transparent),
-        color-mix(in srgb, var(--accent2) 20%, transparent)
-      );
+      border-color: rgba(15,184,255,.45);
+      background: linear-gradient(135deg, rgba(15,184,255,.25), rgba(90,92,255,.22));
     }
-
-    .btn.ghost{
-      border-color: color-mix(in srgb, var(--accent2) 35%, rgba(255,255,255,.12));
-    }
+    .btn.ghost{ border-color: rgba(90,92,255,.45); }
 
     .hero{
       padding:44px 0 22px;
@@ -111,7 +87,6 @@
       margin:0 0 12px;
       letter-spacing:-.02em;
     }
-
     .sub{ color:var(--muted); max-width:68ch; margin:0 0 16px; }
 
     .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
@@ -144,95 +119,62 @@
     .mini .v{ margin-top:3px; font-weight:800; }
 
     .section{ padding:26px 0; }
-    .section h2{ margin:0 0 8px; font-size:26px; letter-spacing:-.01em; }
+    .section h2{ margin:0 0 8px; font-size:26px; }
     .lead{ margin:0 0 18px; color:var(--muted); max-width:80ch; }
 
-    /* Packages */
-    .packages{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      align-items:stretch;
-    }
+    .packages{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
     @media (max-width: 980px){ .packages{ grid-template-columns:1fr; } }
 
     .pkg{ padding:18px; }
     .pkgTop{ display:flex; justify-content:space-between; gap:12px; align-items:flex-start; flex-wrap:wrap; }
     .badge{
       display:inline-flex; gap:8px; align-items:center;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.05);
+      padding:8px 10px; border-radius:999px;
+      border:1px solid var(--border); background: rgba(255,255,255,.05);
       font-size:12px;
-      color: rgba(233,238,247,.92);
     }
     .dot{
       width:8px; height:8px; border-radius:999px;
       background: var(--accent3);
-      box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent3) 18%, transparent);
+      box-shadow: 0 0 0 6px rgba(0,209,143,.18);
     }
-    .price{
-      font-size:34px; font-weight:900; letter-spacing:-.02em; line-height:1;
-    }
+    .price{ font-size:34px; font-weight:900; line-height:1; }
     .per{ font-size:13px; color:var(--muted); margin-top:3px; }
     .who{
-      margin:10px 0 0; color:rgba(233,238,247,.90);
-      font-size:14px;
-      border-left: 3px solid color-mix(in srgb, var(--accent) 55%, transparent);
+      margin:10px 0 0; font-size:14px;
+      border-left: 3px solid rgba(15,184,255,.55);
       padding-left:12px;
     }
-
     ul{ margin:10px 0 0; padding-left:18px; }
     li{ margin:6px 0; color:var(--muted); }
 
     .promise{
-      margin-top:12px;
-      padding:12px;
-      border-radius:16px;
-      border:1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
-      background: linear-gradient(135deg,
-        color-mix(in srgb, var(--accent) 16%, transparent),
-        rgba(255,255,255,.03)
-      );
-      color: rgba(233,238,247,.92);
+      margin-top:12px; padding:12px; border-radius:16px;
+      border:1px solid rgba(15,184,255,.35);
+      background: linear-gradient(135deg, rgba(15,184,255,.18), rgba(255,255,255,.03));
       font-size:14px;
     }
-    .promise strong{ color: var(--text); }
+    .promise.green{ border-color: rgba(0,209,143,.45); }
 
     .ctaRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
 
-    /* FAQ */
     details{
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      border-radius:16px;
-      padding:12px 14px;
+      border:1px solid var(--border); background: rgba(255,255,255,.04);
+      border-radius:16px; padding:12px 14px;
     }
     details + details{ margin-top:10px; }
-    summary{
-      cursor:pointer;
-      font-weight:800;
-      list-style:none;
-    }
+    summary{ cursor:pointer; font-weight:800; list-style:none; }
     summary::-webkit-details-marker{ display:none; }
     details p{ margin:10px 0 0; color:var(--muted); }
 
-    /* Contact */
-    .cols{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:start; }
+    .cols{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
     @media (max-width: 980px){ .cols{ grid-template-columns:1fr; } }
 
     form{ display:grid; gap:10px; }
     label{ font-size:13px; color:var(--muted); }
     input, textarea, select{
-      width:100%;
-      padding:12px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background: rgba(15,26,51,.55);
-      color:var(--text);
-      font-family:var(--font);
-      outline:none;
+      width:100%; padding:12px; border-radius:14px; border:1px solid var(--border);
+      background: rgba(15,26,51,.55); color:var(--text); font-family:var(--font);
     }
     textarea{ min-height:110px; resize:vertical; }
     .row2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
@@ -242,16 +184,9 @@
 
     footer{
       border-top:1px solid var(--border);
-      padding:28px 0 40px;
-      color:var(--muted);
-      font-size:13px;
+      padding:28px 0 40px; color:var(--muted); font-size:13px;
     }
-    .footgrid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
-      align-items:start;
-    }
+    .footgrid{ display:grid; grid-template-columns: 1.2fr .8fr; gap:14px; }
     @media (max-width: 920px){ .footgrid{ grid-template-columns:1fr; } }
   </style>
 </head>
@@ -273,298 +208,121 @@
 
 <main class="wrap">
 
-  <!-- HERO -->
-  <section class="hero" id="top">
+  <section class="hero">
     <div>
       <h1>Pick Package A or B.<br>We handle the rest.</h1>
       <p class="sub">
-        Two simple options designed for real life: <strong>Device Cleanup</strong> (migrations, secure wipe, recycling)
-        or <strong>Troubleshooting</strong> (break‑fix when you need help now). No guesswork, no menu‑pricing overload.
+        Two simple options designed for real life: <strong>Device Cleanup</strong> or <strong>Troubleshooting</strong>.
+        No guesswork. No menu pricing.
       </p>
-
       <div class="ctaRow">
-        <a class="btn primary" href="#packages">View packages & pricing</a>
+        <a class="btn primary" href="#packages">View packages</a>
         <a class="btn ghost" href="#contact">Ask a question</a>
-      </div>
-
-      <div class="chips" aria-label="Highlights">
-        <div class="chip"><strong>15‑min</strong> free triage for new customers</div>
-        <div class="chip">Clearwater • Dunedin • Largo • Palm Harbor</div>
-        <div class="chip">Privacy-first handling</div>
       </div>
     </div>
 
-    <aside class="card aside" aria-label="Quick facts">
+    <aside class="card aside">
       <h3>Simple promise. Real results.</h3>
-      <p>Tell us which package fits. We show up prepared and execute the plan.</p>
-
+      <p>Choose A or B. We show up prepared and execute.</p>
       <div class="miniGrid">
-        <div class="mini">
-          <div class="k">Typical appointment</div>
-          <div class="v">60–120 min</div>
-        </div>
-        <div class="mini">
-          <div class="k">Fast booking</div>
-          <div class="v">In minutes</div>
-        </div>
-        <div class="mini">
-          <div class="k">Remote first</div>
-          <div class="v">When possible</div>
-        </div>
-        <div class="mini">
-          <div class="k">Onsite option</div>
-          <div class="v">Available</div>
-        </div>
-      </div>
-
-      <div class="fine">
-        Note: Some issues require parts or vendor support. Scope is confirmed before work begins.
+        <div class="mini"><div class="k">Typical visit</div><div class="v">60–120 min</div></div>
+        <div class="mini"><div class="k">Fast booking</div><div class="v">Minutes</div></div>
+        <div class="mini"><div class="k">Remote first</div><div class="v">When possible</div></div>
+        <div class="mini"><div class="k">Onsite</div><div class="v">Available</div></div>
       </div>
     </aside>
   </section>
 
-  <!-- PACKAGES -->
   <section class="section" id="packages">
     <h2>Two packages. Zero confusion.</h2>
-    <p class="lead">
-      Choose <strong>Package A</strong> if your goal is “make the device mess go away.” Choose <strong>Package B</strong> if your goal is “fix it now.”
-      Both include clear outcomes, added value, and a risk reversal so you’re never stuck paying for nothing.
-    </p>
+    <p class="lead">Pick A to clean it all up. Pick B to fix it now.</p>
 
     <div class="packages">
 
-      <!-- PACKAGE A -->
-      <div class="card pkg" aria-label="Package A: Device Cleanup">
+      <div class="card pkg">
         <div class="pkgTop">
           <div>
-            <div class="badge"><span class="dot" aria-hidden="true"></span><strong>Package A</strong> · Device Cleanup & Migration</div>
-            <h3 style="margin:10px 0 0; font-size:18px;">“Make the tech pile disappear — safely.”</h3>
+            <div class="badge"><span class="dot"></span><strong>Package A</strong> · Device Cleanup & Migration</div>
+            <h3>Make the tech pile disappear — safely.</h3>
           </div>
           <div>
             <div class="price">$249</div>
-            <div class="per">starting · most jobs finish in 1 visit</div>
+            <div class="per">starting</div>
           </div>
         </div>
 
-        <div class="who">
-          <strong>Best for:</strong> people upgrading devices, drowning in photos/files, or sitting on old equipment they don’t trust themselves to wipe.
-          If you want it clean, organized, and secure — this is you.
-        </div>
-
+        <div class="who"><strong>Best for:</strong> upgrades, messy files, old devices.</div>
         <ul>
-          <li><strong>Data migration</strong> (PC/Mac/phone → new device): docs, photos, browser, basics</li>
-          <li><strong>Setup & polish</strong>: updates, performance cleanup, essential apps, accounts</li>
-          <li><strong>Backup check</strong>: confirm at least one working backup path (cloud or local)</li>
-          <li><strong>Secure wipe option</strong> for old devices (method confirmed + documented)</li>
-          <li><strong>Recycling/resale guidance</strong>: what to keep, donate, recycle, or sell</li>
-          <li><strong>“Don’t break it again” checklist</strong> so you stay organized after we leave</li>
+          <li>Data migration to new device</li>
+          <li>Setup, updates, and polish</li>
+          <li>Backup confirmation</li>
+          <li>Secure wipe (optional)</li>
+          <li>Recycling/resale guidance</li>
         </ul>
 
-        <div class="promise">
-          <strong>Risk reversal:</strong> If we can’t make meaningful progress in the first 15 minutes on-site/remote,
-          you can stop and only owe the booking deposit — no hard feelings.
-        </div>
-
-        <div class="promise" style="border-color:color-mix(in srgb, var(--accent3) 30%, var(--border));">
-          <strong>Added value:</strong> We leave you with a simple folder structure + backup habit so this never becomes a “tech doom pile” again.
-        </div>
+        <div class="promise"><strong>Risk reversal:</strong> Stop in first 15 minutes if no progress.</div>
+        <div class="promise green"><strong>Added value:</strong> Folder + backup habit so it stays clean.</div>
 
         <div class="ctaRow">
-          <a class="btn primary" href="https://buy.stripe.com/REPLACE_PACKAGE_A_LINK" target="_blank" rel="noopener">Choose Package A</a>
-          <a class="btn" href="#contact">Ask if A fits</a>
+          <a class="btn primary" href="https://buy.stripe.com/REPLACE_PACKAGE_A_LINK">Choose Package A</a>
         </div>
-
-        <div class="fine"><strong>Urgency:</strong> limited weekly slots to ensure same/next‑day availability.</div>
       </div>
 
-      <!-- PACKAGE B -->
-      <div class="card pkg" aria-label="Package B: Troubleshooting">
+      <div class="card pkg">
         <div class="pkgTop">
           <div>
-            <div class="badge"><span class="dot" aria-hidden="true"></span><strong>Package B</strong> · Troubleshooting (Break‑Fix)</div>
-            <h3 style="margin:10px 0 0; font-size:18px;">“Fix the thing that’s stopping your day.”</h3>
+            <div class="badge"><span class="dot"></span><strong>Package B</strong> · Troubleshooting</div>
+            <h3>Fix the thing stopping your day.</h3>
           </div>
           <div>
             <div class="price">$179</div>
-            <div class="per">flat for first 90 minutes</div>
+            <div class="per">first 90 min</div>
           </div>
         </div>
 
-        <div class="who">
-          <strong>Best for:</strong> work‑from‑home pros, small offices, and anyone with a “right now” problem:
-          Wi‑Fi down, printer offline, email broken, Zoom/Teams issues, slow computer, mystery popups.
-        </div>
-
+        <div class="who"><strong>Best for:</strong> Wi‑Fi, printer, email, slow computer.</div>
         <ul>
-          <li><strong>Rapid diagnosis</strong>: identify the real cause (not just symptoms)</li>
-          <li><strong>Fix + verify</strong>: we confirm it works before we leave</li>
-          <li><strong>Stability boost</strong>: updates, driver checks, basic security tuning where relevant</li>
-          <li><strong>Wi‑Fi / router / mesh</strong> adjustments (coverage + reliability)</li>
-          <li><strong>Printer “offline”</strong> fixes (printing + scanning)</li>
-          <li><strong>Plain‑English recap</strong>: what happened + how to avoid it next time</li>
+          <li>Rapid diagnosis</li>
+          <li>Fix and verify</li>
+          <li>Stability + security tune</li>
+          <li>Plain-English recap</li>
         </ul>
 
-        <div class="promise">
-          <strong>Risk reversal:</strong> If we can’t identify a credible root cause + next step in the first 30 minutes,
-          you can stop and only owe the booking deposit.
-        </div>
-
-        <div class="promise" style="border-color:color-mix(in srgb, var(--accent3) 30%, var(--border));">
-          <strong>Added value:</strong> You get a mini “health check” (updates + basic security) while we’re in there, at no extra charge.
-        </div>
+        <div class="promise"><strong>Risk reversal:</strong> Stop in first 30 minutes if no path forward.</div>
+        <div class="promise green"><strong>Added value:</strong> Mini health check included.</div>
 
         <div class="ctaRow">
-          <a class="btn primary" href="https://buy.stripe.com/REPLACE_PACKAGE_B_LINK" target="_blank" rel="noopener">Choose Package B</a>
-          <a class="btn" href="#contact">Ask if B fits</a>
+          <a class="btn primary" href="https://buy.stripe.com/REPLACE_PACKAGE_B_LINK">Choose Package B</a>
         </div>
-
-        <div class="fine"><strong>Urgency:</strong> same‑day slots are limited and fill first.</div>
       </div>
 
     </div>
-
-    <div class="fine" style="margin-top:14px;">
-      Pricing is a sample. Adjust for travel distance, device count, and complexity. Deposits (recommended) reduce no‑shows and reserve your slot.
-    </div>
   </section>
 
-  <!-- FAQ -->
   <section class="section" id="faq">
     <h2>FAQ</h2>
-    <p class="lead">The common questions people ask before they book.</p>
-
-    <details>
-      <summary>What’s included in “Device Cleanup & Migration”?</summary>
-      <p>
-        It’s the “make it all sane again” package: moving your data to the new device, organizing the essentials, doing updates/performance cleanup,
-        confirming backups, and optionally securely wiping old devices. Recycling/resale guidance is included so you know what to do with the old gear.
-      </p>
-    </details>
-
-    <details>
-      <summary>What if my job takes longer than the package time?</summary>
-      <p>
-        We’ll tell you early. Most jobs fit within one visit. If you need more time, you can approve an additional block before we proceed.
-        No surprise bills.
-      </p>
-    </details>
-
-    <details>
-      <summary>Do you offer remote support?</summary>
-      <p>
-        Yes. If it can be solved remotely, we’ll recommend that first (faster and cheaper). For Wi‑Fi coverage, printer hardware issues, or physical device moves,
-        onsite is usually best.
-      </p>
-    </details>
-
-    <details>
-      <summary>Is my data safe with you?</summary>
-      <p>
-        We use a privacy-first approach: no passwords collected via forms, and we confirm data-handling steps before any transfers or wiping.
-        If secure wiping is requested, we confirm the method and provide documentation of what was done.
-      </p>
-    </details>
-
-    <details>
-      <summary>Do you take old equipment away?</summary>
-      <p>
-        Yes, as an add-on to Package A (or when paired with a service visit). We focus on responsible disposal: reuse/resale/donate when possible,
-        recycle when appropriate. We avoid hauling low-value items as a standalone visit unless scheduled with other work.
-      </p>
-    </details>
-
-    <details>
-      <summary>What areas do you serve?</summary>
-      <p>
-        Tampa Bay with priority in Clearwater, Dunedin, Largo, and Palm Harbor. If you’re nearby, ask—we may still be able to help.
-      </p>
-    </details>
+    <details><summary>Do you offer remote support?</summary><p>Yes. Remote first when possible.</p></details>
+    <details><summary>Is my data safe?</summary><p>Privacy-first handling. No passwords collected.</p></details>
+    <details><summary>What areas do you serve?</summary><p>Tampa Bay with priority in Clearwater, Dunedin, Largo, Palm Harbor.</p></details>
   </section>
 
-  <!-- CONTACT -->
   <section class="section" id="contact">
     <h2>Request help</h2>
-    <p class="lead">Pick A or B, answer a few questions, and we’ll confirm the next step.</p>
-
     <div class="cols">
       <div class="card pkg">
-        <h3 style="margin:0 0 6px; font-size:16px;">Contact form</h3>
-        <p class="sub" style="margin:0 0 14px;">Fast intake so we show up prepared.</p>
-
-        <form action="#" method="post" onsubmit="return fakeSubmit(event)">
-          <div class="row2">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" autocomplete="name" required />
-            </div>
-            <div>
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" autocomplete="tel" required />
-            </div>
-          </div>
-
-          <div class="row2">
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-            </div>
-            <div>
-              <label for="city">City / ZIP</label>
-              <input id="city" name="city" placeholder="e.g., Clearwater 33755" />
-            </div>
-          </div>
-
-          <div class="row2">
-            <div>
-              <label for="package">Which package?</label>
-              <select id="package" name="package" required>
-                <option value="" selected disabled>Select one</option>
-                <option>Package A — Device Cleanup & Migration</option>
-                <option>Package B — Troubleshooting (Break‑Fix)</option>
-                <option>Not sure — help me choose</option>
-              </select>
-            </div>
-            <div>
-              <label for="urgency">How soon?</label>
-              <select id="urgency" name="urgency" required>
-                <option value="" selected disabled>Select one</option>
-                <option>Today / ASAP</option>
-                <option>Within 48 hours</option>
-                <option>This week</option>
-                <option>Flexible</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label for="details">What’s going on?</label>
-            <textarea id="details" name="details" placeholder="Any error messages? What outcome do you want?" required></textarea>
-          </div>
-
-          <div class="ctaRow" style="justify-content:space-between; align-items:center;">
-            <button class="btn primary" type="submit">Submit request</button>
-            <span class="badge"><span class="dot" aria-hidden="true"></span>Response typically within 1 business day</span>
-          </div>
-
-          <div class="fine">Privacy note: Don’t send passwords via this form.</div>
+        <form onsubmit="return false;">
+          <label>Name</label><input required>
+          <label>Phone</label><input required>
+          <label>Email</label><input type="email" required>
+          <label>Package</label>
+          <select required><option>Package A</option><option>Package B</option></select>
+          <label>Details</label><textarea></textarea>
+          <button class="btn primary">Submit</button>
         </form>
       </div>
-
       <div class="card pkg">
-        <h3 style="margin:0 0 6px; font-size:16px;">Direct contact (replace)</h3>
-        <ul>
-          <li>Phone: (727) 000‑0000</li>
-          <li>Email: help@yourdomain.com</li>
-        </ul>
-
-        <div class="promise" style="margin-top:12px;">
-          <strong>How we keep it simple:</strong> You choose A or B, pay the package link, and we move forward.
-          If you’re not sure, submit the form and we’ll recommend the right package.
-        </div>
-
-        <div class="fine" style="margin-top:12px;">
-          Replace Stripe links for Package A and B above when you create your Stripe Payment Links.
-        </div>
+        <p><strong>Direct:</strong></p>
+        <p>Phone: (727) 000‑0000<br>Email: help@yourdomain.com</p>
       </div>
     </div>
   </section>
@@ -573,40 +331,19 @@
 
 <footer>
   <div class="wrap footgrid">
-    <div>
-      <div class="brand">
-        <img src="assets/logo.png" alt="SunCoast Tech Support Logo" class="logo-img">
-        <div>
-          <div style="font-weight:900; color:var(--text);">SunCoast Tech Support</div>
-          <div class="tag">Operated by 88 Bit Diamond Hands · Managed IT & Security</div>
-        </div>
+    <div class="brand">
+      <img src="assets/logo.png" class="logo-img">
+      <div>
+        <div>SunCoast Tech Support</div>
+        <div class="tag">Operated by 88 Bit Diamond Hands</div>
       </div>
-
-      <p style="margin:12px 0 0; max-width: 85ch;">
-        Disclaimer: Services are provided on a best-effort basis. Some issues may require parts, vendor support,
-        or extended diagnostics. Scope is confirmed before proceeding.
-      </p>
     </div>
-
-    <div>
-      <p style="margin:0 0 10px;"><strong style="color:var(--text);">Quick links</strong></p>
-      <div class="ctaRow">
-        <a class="btn" href="#packages">Packages</a>
-        <a class="btn" href="#faq">FAQ</a>
-        <a class="btn" href="#contact">Contact</a>
-      </div>
-      <p class="fine" style="margin-top:12px;">© <span id="year"></span> SunCoast Tech Support. All rights reserved.</p>
-    </div>
+    <div class="fine">© <span id="y"></span> SunCoast Tech Support</div>
   </div>
 </footer>
 
 <script>
-  function fakeSubmit(e){
-    e.preventDefault();
-    alert("Form submitted (demo). Next step: connect this form to a backend (Formspree/Netlify/Cloudflare Worker) and replace Stripe links.");
-    return false;
-  }
-  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("y").textContent = new Date().getFullYear();
 </script>
 
 </body>
