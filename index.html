@@ -3,144 +3,746 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SunCoast Tech Support | Simple, On‑Site Tech Help</title>
-  <meta name="description" content="SunCoast Tech Support offers two simple on‑site service packages in Tampa Bay: Troubleshooting or Device Cleanup & Data Preservation. Licensed, insured, and veteran‑owned." />
+  <title>SunCoast Tech Support | On-Site Tech Help</title>
+  <meta name="description" content="Clear, on-site IT help across the Clearwater area for homeowners, remote workers, and small businesses. Two simple packages. Free 15-minute consultation. Licensed, insured, veteran-owned." />
 
   <style>
     :root{
       --bg:#070b14;
-      --text:#e9eef7;
-      --muted:#97a3b6;
+      --text:#f3f6ff;
+      --muted:#c6d1e6;
+      --muted2:#aebbd6;
+
+      /* Brand accents (update to match your logo) */
       --accent:#0fb8ff;
       --accent2:#5a5cff;
-      --border: rgba(255,255,255,.12);
-      --radius:18px;
-      --max:1100px;
+      --accent3:#00d18f;
+
+      --border: rgba(255,255,255,.18);
+      --radius:20px;
+      --max:1120px;
       --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --shadow: 0 18px 55px rgba(0,0,0,.45);
+      --shadow2: 0 10px 28px rgba(0,0,0,.35);
     }
 
     *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
     body{
       margin:0;
       font-family:var(--font);
-      background: linear-gradient(180deg, #050814, var(--bg));
+      font-size:18px;
+      line-height:1.65;
       color:var(--text);
+      background:
+        radial-gradient(950px 540px at 18% 10%, rgba(90,92,255,.22), transparent 58%),
+        radial-gradient(780px 480px at 86% 16%, rgba(15,184,255,.18), transparent 56%),
+        linear-gradient(180deg, #050814, var(--bg));
     }
 
+    a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:var(--max); margin:0 auto; padding:24px; }
 
+    /* ===== Header ===== */
     header{
-      background:#050814;
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(5,8,20,.78);
       border-bottom:1px solid var(--border);
     }
-
     .nav{
-      display:flex; justify-content:space-between; align-items:center;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:14px 24px; max-width:var(--max); margin:0 auto;
+    }
+    .brand{ display:flex; gap:10px; align-items:center; font-weight:950; letter-spacing:.2px; }
+    .logo-img{
+      width:38px; height:38px; object-fit:contain;
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,.35));
+    }
+    .tagline-badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
+    .pill{
+      font-size:13px;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.07);
+      color: rgba(243,246,255,.98);
+      white-space:nowrap;
+      font-weight:900;
     }
 
-    .brand{ display:flex; gap:10px; align-items:center; font-weight:800; }
-    .logo-img{ width:34px; height:34px; object-fit:contain; }
-    .tag{ font-size:12px; color:var(--muted); }
-
+    /* ===== Buttons ===== */
     .btn{
-      padding:12px 16px;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:13px 18px;
       border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.06);
-      font-weight:700;
+      background: rgba(255,255,255,.08);
+      font-weight:950;
+      cursor:pointer;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
+      font-size:16px;
     }
+    .btn:hover{ background: rgba(255,255,255,.12); transform: translateY(-1px); }
     .btn.primary{
-      border-color: rgba(15,184,255,.45);
-      background: linear-gradient(135deg, rgba(15,184,255,.25), rgba(90,92,255,.22));
+      border-color: rgba(15,184,255,.70);
+      background: linear-gradient(135deg, rgba(15,184,255,.32), rgba(90,92,255,.28));
+      box-shadow: 0 12px 34px rgba(15,184,255,.10);
+    }
+    .btn.secondary{
+      border-color: rgba(90,92,255,.60);
+      background: rgba(255,255,255,.08);
+    }
+    .btn.call{
+      border-color: rgba(0,209,143,.70);
+      background: linear-gradient(135deg, rgba(0,209,143,.20), rgba(255,255,255,.04));
     }
 
-    h1{ font-size:clamp(32px,4vw,50px); }
-    .sub{ color:var(--muted); }
-
+    /* ===== Cards / sections ===== */
     .card{
-      background: rgba(255,255,255,.05);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
       border:1px solid var(--border);
       border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
+      box-shadow: var(--shadow2);
     }
 
+    .hero{
+      padding:34px 0 10px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){ .hero{ grid-template-columns:1fr; padding-top:22px; } }
+
+    h1{
+      font-size: clamp(34px,4.0vw,54px);
+      line-height:1.10;
+      margin:0 0 12px;
+      letter-spacing:-.02em;
+    }
+    .sub{
+      color:var(--muted);
+      max-width:72ch;
+      margin:0 0 10px;
+      font-weight:700;
+      font-size:18px;
+    }
+    .support{
+      color: rgba(243,246,255,.98);
+      margin:0 0 14px;
+      font-weight:900;
+      font-size:18px;
+    }
+
+    .ctaRow{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+
+    .valueGrid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; padding:16px; }
+    @media (max-width: 520px){ .valueGrid{ grid-template-columns:1fr; } }
+    .mini{
+      border:1px solid var(--border);
+      background: rgba(10,18,36,.55);
+      border-radius:16px;
+      padding:14px;
+    }
+    .mini .k{ font-size:13px; color:var(--muted2); font-weight:950; }
+    .mini .v{ margin-top:4px; font-weight:950; }
+
+    .section{ padding:26px 0; }
+    .section h2{ margin:0 0 8px; font-size:30px; letter-spacing:-.01em; }
+    .lead{ margin:0 0 16px; color:var(--muted); max-width:92ch; font-weight:700; }
+
+    /* ===== Packages ===== */
     .packages{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap:16px;
+      align-items:stretch;
     }
-    @media(max-width:900px){ .packages{ grid-template-columns:1fr; } }
+    @media (max-width: 980px){ .packages{ grid-template-columns:1fr; } }
 
-    .price{ font-size:30px; font-weight:900; }
-    ul{ padding-left:18px; }
-    li{ color:var(--muted); margin:6px 0; }
+    .pkg{
+      position:relative;
+      padding:18px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      transform: translateZ(0);
+      display:flex;
+      flex-direction:column;
+    }
+    .pkg:hover{ transform: translateY(-2px); transition: transform .12s ease; }
 
+    .pkg:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: linear-gradient(135deg, rgba(15,184,255,.48), rgba(90,92,255,.30));
+      opacity:.22; pointer-events:none;
+    }
+    .pkg:after{
+      content:"";
+      position:absolute; top:-150px; right:-150px;
+      width:340px; height:340px; border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(15,184,255,.40), transparent 60%);
+      opacity:.55; pointer-events:none;
+    }
+
+    .pkgHead{
+      position:relative;
+      display:flex; justify-content:space-between; gap:12px; align-items:flex-start; flex-wrap:wrap;
+      margin-bottom:10px;
+      min-height:98px; /* helps align pricing blocks */
+    }
+    .badge{
+      position:relative;
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.08);
+      font-size:13px; font-weight:950;
+    }
+    .dot{
+      width:9px; height:9px; border-radius:999px;
+      background: var(--accent3);
+      box-shadow: 0 0 0 6px rgba(0,209,143,.18);
+    }
+
+    .priceBox{ text-align:right; min-width:170px; }
+    .price{ font-size:38px; font-weight:950; letter-spacing:-.02em; line-height:1; }
+    .per{ margin-top:6px; font-size:13px; color:var(--muted2); font-weight:950; }
+
+    .pkgTitle{ margin:10px 0 0; font-size:19px; font-weight:950; letter-spacing:-.01em; }
+    .pkgTagline{ margin:8px 0 0; color: rgba(243,246,255,.98); font-weight:950; }
+
+    .who{
+      position:relative; margin-top:12px; font-size:16px;
+      border-left:3px solid rgba(15,184,255,.65);
+      padding-left:12px;
+      color: rgba(243,246,255,.98);
+      font-weight:700;
+    }
+    .list{ position:relative; margin:12px 0 0; padding-left:18px; }
+    .list li{ margin:8px 0; color:var(--muted); font-weight:700; }
+
+    .callouts{ position:relative; display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+
+    .guarantee{
+      position:relative; margin-top:12px; padding:13px; border-radius:16px;
+      border:1px solid rgba(15,184,255,.45);
+      background: linear-gradient(135deg, rgba(15,184,255,.18), rgba(255,255,255,.04));
+      font-size:16px; color: rgba(243,246,255,.98);
+      font-weight:700;
+    }
+    .guarantee strong{ color:var(--text); font-weight:950; }
+
+    .pkgCtas{ position:relative; display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+    .fine{ font-size:13px; color:var(--muted2); margin-top:10px; font-weight:700; }
+
+    /* ===== Reviews ===== */
+    .reviews{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 980px){ .reviews{ grid-template-columns:1fr; } }
+
+    .review{ padding:16px; position:relative; overflow:hidden; }
+    .stars{
+      font-weight:950;
+      letter-spacing:.12em;
+      color: rgba(243,246,255,.98);
+      margin-bottom:8px;
+      font-size:16px;
+    }
+    blockquote{ margin:0; color: rgba(243,246,255,.98); font-weight:700; }
+    .whoSaid{ margin-top:10px; color:var(--muted2); font-size:13px; font-weight:950; }
+
+    /* ===== What Happens Next ===== */
+    .steps{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 980px){ .steps{ grid-template-columns:1fr; } }
+
+    .step{ padding:16px; position:relative; overflow:hidden; }
+    .step .n{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:36px; height:36px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(15,184,255,.34), rgba(90,92,255,.30));
+      border:1px solid rgba(255,255,255,.16);
+      font-weight:950;
+      margin-bottom:10px;
+    }
+    .step h3{ margin:0 0 6px; font-size:18px; }
+    .step p{ margin:0; color:var(--muted); font-weight:700; }
+
+    /* ===== CTA panel ===== */
+    .ctaPanel{ padding:18px; position:relative; overflow:hidden; }
+    .ctaPanel:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: linear-gradient(135deg, rgba(0,209,143,.22), rgba(15,184,255,.18));
+      opacity:.25; pointer-events:none;
+    }
+
+    /* ===== FAQ ===== */
+    .faqGrid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+    @media (max-width: 980px){ .faqGrid{ grid-template-columns:1fr; } }
+
+    details{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:950;
+      list-style:none;
+      font-size:18px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin:10px 0 0; color:var(--muted); font-weight:700; }
+
+    /* ===== Contact ===== */
+    .contactGrid{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:start; }
+    @media (max-width: 980px){ .contactGrid{ grid-template-columns:1fr; } }
+
+    form{ display:grid; gap:10px; }
+    label{ font-size:14px; color:var(--muted2); font-weight:950; }
+    input, textarea, select{
+      width:100%;
+      padding:13px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(10,18,36,.55);
+      color:var(--text);
+      font-family:var(--font);
+      outline:none;
+      font-size:16px;
+    }
+    textarea{ min-height:120px; resize:vertical; }
+    .row2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    @media (max-width: 520px){ .row2{ grid-template-columns:1fr; } }
+
+    /* ===== Footer ===== */
     footer{
       border-top:1px solid var(--border);
-      color:var(--muted);
-      font-size:13px;
-      padding:24px 0;
+      padding:28px 0 40px;
+      color:var(--muted2);
+      font-size:14px;
     }
+    .footRow{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; }
   </style>
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
+  <div class="nav">
     <div class="brand">
-      <img src="assets/logo.png" class="logo-img" alt="SunCoast Tech Support">
+      <img src="assets/logo.png" class="logo-img" alt="SunCoast Tech Support Logo">
       <div>
         <div>SunCoast Tech Support</div>
-        <div class="tag">Licensed • Insured • Veteran‑Owned</div>
+        <div class="tagline-badges">
+          <span class="pill">Licensed</span>
+          <span class="pill">Insured</span>
+          <span class="pill">Veteran-Owned</span>
+          <span class="pill">On-site as needed</span>
+        </div>
       </div>
     </div>
-    <a href="#packages" class="btn primary">Choose a Package</a>
+    <div class="ctaRow" style="margin:0;">
+      <a href="#contact" class="btn primary">Book Your Free 15-Min Consultation</a>
+      <a href="tel:+17270000000" class="btn call">Call Now</a>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
 
-  <section>
-    <h1>On‑site tech help, without the confusion.</h1>
-    <p class="sub">
-      We come to your home or home office to take care of the problem for you.
-      Choose a package and we handle the rest.
-    </p>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div>
+      <h1>Tech problems solved at your home or home office — without the stress.</h1>
+      <p class="sub">
+        Clear, on-site IT help for homeowners, remote workers, and small businesses across the Clearwater area.
+        <strong>To see if your area is covered, check the FAQ.</strong>
+      </p>
+      <p class="support">Two simple service packages. We come to you and handle it.</p>
+
+      <div class="ctaRow">
+        <a class="btn primary" href="#contact">Book Your Free 15-Min Consultation</a>
+        <a class="btn call" href="tel:+17270000000">Call Now</a>
+        <a class="btn secondary" href="#packages">View packages</a>
+      </div>
+    </div>
+
+    <aside class="card">
+      <div class="valueGrid">
+        <div class="mini">
+          <div class="k">Free consult</div>
+          <div class="v">15 minutes (new clients)</div>
+        </div>
+        <div class="mini">
+          <div class="k">On-site as needed</div>
+          <div class="v">Remote/phone when possible</div>
+        </div>
+        <div class="mini">
+          <div class="k">Typical visit time</div>
+          <div class="v">60–120 min</div>
+        </div>
+        <div class="mini">
+          <div class="k">Primary area</div>
+          <div class="v">Clearwater area</div>
+        </div>
+      </div>
+      <div class="fine" style="padding:0 16px 16px;">
+        Clearwater area service. Not sure you're covered? Check the FAQ.
+      </div>
+    </aside>
   </section>
 
-  <section id="packages">
-    <h2>Two Packages</h2>
+  <!-- PACKAGES -->
+  <section class="section" id="packages">
+    <h2>Choose Package A or Package B</h2>
+    <p class="lead">
+      Package A is for immediate troubleshooting and repair. Package B is for saving family memories and clearing out old devices.
+      <br><strong>Both include:</strong> free 15-minute consultation (new clients). On-site support is provided <strong>as needed</strong> — if the issue can be resolved by phone or remotely, on-site is not required.
+    </p>
 
     <div class="packages">
 
-      <div class="card">
-        <h3>Package B — Troubleshooting & Repair</h3>
-        <div class="price">$179</div>
-        <p class="tag">First 90 minutes</p>
-        <ul>
-          <li>Desktop or laptop troubleshooting</li>
-          <li>Wi‑Fi, internet, email, slow computers</li>
-          <li>On‑site service included</li>
-          <li>Free 15‑minute consultation for new clients</li>
+      <!-- LEFT: Package A -->
+      <div class="card pkg" aria-label="Package A - Troubleshooting">
+        <div class="pkgHead">
+          <div>
+            <div class="badge"><span class="dot" aria-hidden="true"></span>Package A · Troubleshooting & Repair</div>
+            <div class="pkgTitle">Fix the thing that’s stopping your day.</div>
+            <div class="pkgTagline">Clear plan. Fast fix. Confirmed before we leave.</div>
+          </div>
+          <div class="priceBox">
+            <div class="price">$179</div>
+            <div class="per">first 90 minutes · first available</div>
+          </div>
+        </div>
+
+        <div class="callouts">
+          <span class="pill">Free 15-min consult (new clients)</span>
+          <span class="pill">Remote/phone when possible</span>
+          <span class="pill">On-site as needed</span>
+        </div>
+
+        <div class="who">
+          <strong>Best for:</strong> “My computer/laptop is acting up, and I need help fast.”
+        </div>
+
+        <ul class="list">
+          <li><strong>Desktop & laptop troubleshooting</strong> (working or not)</li>
+          <li>Slow performance, pop-ups, login/account issues, email issues</li>
+          <li>Wi‑Fi/basic home office connectivity issues</li>
+          <li>Plain-English recap: what happened + what we did</li>
+          <li><strong>Not supported:</strong> broken monitors/printers (we don’t repair them)</li>
         </ul>
+
+        <div class="guarantee">
+          <strong>🛡️ Guarantee (with conditions):</strong>
+          If we can’t identify a clear cause and a practical next step within the first 30 minutes,
+          you can stop the service and you won’t be charged beyond the new-client consultation.
+        </div>
+
+        <div class="pkgCtas">
+          <a class="btn primary" href="#contact">Book Package A</a>
+          <a class="btn secondary" href="tel:+17270000000">Call Now</a>
+        </div>
+
+        <div class="fine" style="border-top:1px dashed var(--border); padding-top:10px; margin-top:10px;">
+          Additional computers can be handled during the same visit. Scope and pricing are confirmed during the free consultation.
+        </div>
+
+        <div class="fine"><strong>Payment:</strong> credit card or cash.</div>
       </div>
 
-      <div class="card">
-        <h3>Package A — Device Cleanup & Data Preservation</h3>
-        <div class="price">$249</div>
-        <p class="tag">Most jobs completed in one visit</p>
-        <ul>
-          <li>Preserve family photos and videos</li>
-          <li>Consolidate multiple computers</li>
-          <li>Move data to USB, cloud, or external drive</li>
-          <li>Prepare devices for recycling</li>
-          <li>Free 15‑minute consultation included</li>
+      <!-- RIGHT: Package B -->
+      <div class="card pkg" aria-label="Package B - Device Cleanup & Data Preservation">
+        <div class="pkgHead">
+          <div>
+            <div class="badge"><span class="dot" aria-hidden="true"></span>Package B · Device Cleanup & Data Preservation</div>
+            <div class="pkgTitle">Keep the memories. Clear the clutter.</div>
+            <div class="pkgTagline">Family photos, home videos, important documents — saved and organized.</div>
+          </div>
+          <div class="priceBox">
+            <div class="price">$249</div>
+            <div class="per">starting · first available</div>
+          </div>
+        </div>
+
+        <div class="callouts">
+          <span class="pill">Free 15-min consult (new clients)</span>
+          <span class="pill">Remote/phone when possible</span>
+          <span class="pill">On-site as needed</span>
+        </div>
+
+        <div class="who">
+          <strong>Best for:</strong> Old computers/laptops with family photos or videos you want to keep — but you don’t want the devices anymore.
+        </div>
+
+        <ul class="list">
+          <li><strong>Find and gather</strong> photos, videos, and important documents</li>
+          <li><strong>Combine</strong> files from multiple computers into one organized place</li>
+          <li><strong>Move your files</strong> to the medium you choose: USB, external drive, cloud, or disc (CD/DVD where applicable)</li>
+          <li><strong>Prepare devices</strong> for recycling/disposal as part of the package</li>
+          <li><strong>Optional secure wipe</strong> so personal data isn’t left behind</li>
+          <li><strong>Macs:</strong> accepted for recycling only (no Mac repairs at this time)</li>
+          <li><strong>Phones/handhelds:</strong> limited support, reviewed case-by-case</li>
         </ul>
+
+        <div class="guarantee">
+          <strong>🛡️ Guarantee (with conditions):</strong>
+          If we can’t safely locate and begin preserving your data during the visit,
+          you can stop and you won’t be charged beyond the new-client consultation.
+        </div>
+
+        <div class="pkgCtas">
+          <a class="btn primary" href="#contact">Book Package B</a>
+          <a class="btn secondary" href="tel:+17270000000">Call Now</a>
+        </div>
+
+        <div class="fine" style="border-top:1px dashed var(--border); padding-top:10px; margin-top:10px;">
+          Additional computers can be handled during the same visit. Scope and pricing are confirmed during the free consultation.
+        </div>
+
+        <div class="fine"><strong>Note:</strong> Recycling is tied to a purchased package (not standalone).</div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" id="reviews">
+    <h2>Reviews</h2>
+    <p class="lead">Examples of what clients typically say. Replace with real reviews as you collect them.</p>
+
+    <div class="reviews">
+      <div class="card review">
+        <div class="stars">★★★★★</div>
+        <blockquote>“He showed up on time, explained everything clearly, and my laptop was back to normal in under an hour.”</blockquote>
+        <div class="whoSaid">— Remote worker, Clearwater</div>
+      </div>
+      <div class="card review">
+        <div class="stars">★★★★★</div>
+        <blockquote>“We had years of family photos scattered across old computers. He consolidated everything and moved it to an external drive.”</blockquote>
+        <div class="whoSaid">— Homeowner, Dunedin</div>
+      </div>
+      <div class="card review">
+        <div class="stars">★★★★★</div>
+        <blockquote>“Direct help, no call center. Clear communication from start to finish.”</blockquote>
+        <div class="whoSaid">— Small business owner, Clearwater</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section class="section" id="next">
+    <h2>What Happens After You Reach Out</h2>
+    <p class="lead">Here’s exactly what to expect — simple and clear.</p>
+
+    <div class="steps">
+      <div class="card step">
+        <h3>1️⃣ Quick Conversation</h3>
+        <p>We start with a free 15-minute consultation to understand what you’re dealing with and confirm the best next step.</p>
+      </div>
+      <div class="card step">
+        <h3>2️⃣ Clear Recommendation</h3>
+        <p>You’ll get a straightforward explanation of what’s needed, which package fits, and what to expect — no jargon.</p>
+      </div>
+      <div class="card step">
+        <h3>3️⃣ On‑Site or Remote Support</h3>
+        <p>We come to your home or home office when needed — or help by phone/remote when appropriate — and take care of the issue efficiently.</p>
+      </div>
+      <div class="card step">
+        <h3>4️⃣ Wrap‑Up & Peace of Mind</h3>
+        <p>Before we finish, we confirm everything is working and answer any remaining questions so you’re not left guessing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="section" id="cta">
+    <div class="card ctaPanel">
+      <div style="position:relative; padding:18px;">
+        <h2 style="margin:0 0 6px;">Book your free 15-minute consultation</h2>
+        <p class="lead" style="margin:0 0 14px;">
+          Tell us what’s going on and we’ll recommend the right package. No pressure — just clarity.
+        </p>
+        <div class="ctaRow">
+          <a class="btn primary" href="#contact">Book Your Free 15-Min Consultation</a>
+          <a class="btn call" href="tel:+17270000000">Call Now</a>
+          <a class="btn secondary" href="#faq">Check service areas</a>
+        </div>
+        <div class="fine">
+          Clearwater area service. Not sure you're covered? Check the FAQ.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <h2>FAQ</h2>
+    <p class="lead">Clear answers before you book.</p>
+
+    <div class="faqGrid">
+      <details>
+        <summary>❓ What areas do you serve?</summary>
+        <p>
+          Clearwater area coverage includes:
+          <strong>Belleair</strong>, <strong>Clearwater</strong>, <strong>Dunedin</strong>, <strong>Largo</strong>, <strong>Palm Harbor</strong>, <strong>Safety Harbor</strong>.
+          If you’re nearby and not listed, reach out — we may still be able to help.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>❓ What if I have more than one computer?</summary>
+        <p>
+          That’s very common. Many households and home-based businesses have multiple computers that need data moved or cleaned up.
+          During the free 15-minute consultation, we’ll confirm how many devices are involved and whether everything can be handled during the same visit.
+        </p>
+      </details>
+
+      <details>
+        <summary>❓ What payment methods do you accept?</summary>
+        <p>
+          We accept <strong>credit card</strong> and <strong>cash</strong>. Payment is due at time of service unless otherwise arranged.
+        </p>
+      </details>
+
+      <details>
+        <summary>❓ How long do visits typically take?</summary>
+        <p>
+          Troubleshooting (Package A) is usually resolved within 60–90 minutes.
+          Device Cleanup (Package B) is commonly completed in one visit (often 90–180 minutes depending on data size and number of devices).
+        </p>
+      </details>
+
+      <details>
+        <summary>❓ Is on-site service always required?</summary>
+        <p>
+          No. On‑site support is provided <strong>as needed</strong>.
+          If the issue can be resolved over the phone or remotely, an on‑site visit is not required.
+        </p>
+      </details>
+
+      <details>
+        <summary>❓ What devices do you service?</summary>
+        <p>
+          We service desktop computers and laptops (working or broken). We do not repair broken monitors or printers.
+          Macs are accepted for recycling only (no Mac troubleshooting/repairs at this time).
+          Phones/handheld devices are limited and handled case-by-case.
+        </p>
+      </details>
+
+      <details>
+        <summary>❓ Do you offer recycling as a standalone service?</summary>
+        <p>
+          No. Recycling is tied to a purchased service package (A or B) and not offered as a standalone pickup.
+          Network equipment (routers, switches, access points) can be recycled for an additional cost when paired with a package.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2>Book your free 15-minute consultation</h2>
+    <p class="lead">
+      Tell us what’s going on. We’ll recommend Package A or B, set expectations, and schedule remote/phone help or on‑site support if needed.
+      <br><strong>Clearwater area service — check the FAQ for covered locations.</strong>
+    </p>
+
+    <div class="contactGrid">
+      <div class="card" style="padding:18px;">
+        <form action="#" method="post" onsubmit="return fakeSubmit(event)">
+          <div class="row2">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" autocomplete="tel" required />
+            </div>
+          </div>
+
+          <div class="row2">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div>
+              <label for="city">City / ZIP</label>
+              <input id="city" name="city" placeholder="e.g., Clearwater 33755" />
+            </div>
+          </div>
+
+          <div class="row2">
+            <div>
+              <label for="package">Which package?</label>
+              <select id="package" name="package" required>
+                <option value="" selected disabled>Select one</option>
+                <option>Package A — Troubleshooting & Repair</option>
+                <option>Package B — Device Cleanup & Data Preservation</option>
+                <option>Not sure — help me choose</option>
+              </select>
+            </div>
+            <div>
+              <label for="urgency">How soon?</label>
+              <select id="urgency" name="urgency" required>
+                <option value="" selected disabled>Select one</option>
+                <option>First available</option>
+                <option>Within 48 hours</option>
+                <option>This week</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="details">What outcome do you want?</label>
+            <textarea id="details" name="details" placeholder="Example: 'Move family photos off 2 old laptops to an external drive' or 'Wi-Fi keeps dropping during work calls'." required></textarea>
+          </div>
+
+          <div class="ctaRow" style="justify-content:space-between; align-items:center;">
+            <button class="btn primary" type="submit">Book Your Free 15-Min Consultation</button>
+            <span class="pill">Response typically within 1 business day</span>
+          </div>
+
+          <div class="fine">Privacy note: Do not send passwords via this form.</div>
+        </form>
+      </div>
+
+      <div class="card" style="padding:18px;">
+        <h3 style="margin:0 0 8px;">Call now (replace)</h3>
+        <p class="sub" style="margin:0 0 12px;">
+          Prefer the phone? Call and we’ll do the free 15-minute consult.
+        </p>
+
+        <div class="ctaRow" style="margin-top:0;">
+          <a class="btn call" href="tel:+17270000000">Call Now</a>
+          <a class="btn secondary" href="#packages">View packages</a>
+        </div>
+
+        <div class="guarantee" style="border-color: rgba(0,209,143,.55); background: linear-gradient(135deg, rgba(0,209,143,.16), rgba(255,255,255,.04));">
+          <strong>Trust:</strong> Licensed, insured, veteran-owned. You’ll work directly with an experienced local technician — not a call center or rotating contractors.
+        </div>
+
+        <div class="fine">
+          Payment accepted: <strong>credit card</strong> or <strong>cash</strong>.
+        </div>
+      </div>
     </div>
   </section>
 
@@ -148,12 +750,26 @@
 
 <footer>
   <div class="wrap">
-    © <span id="y"></span> SunCoast Tech Support
+    <div class="footRow">
+      <div>© <span id="year"></span> SunCoast Tech Support · Licensed · Insured · Veteran-Owned</div>
+      <div class="pill">Free 15-min consult (new clients)</div>
+    </div>
+    <div class="fine" style="margin-top:10px;">
+      You’ll work directly with an experienced local technician — not a call center or rotating contractors.
+    </div>
+    <div class="fine" style="margin-top:10px;">
+      Disclaimer: Services are provided on a best-effort basis. Some issues may require parts, vendor support, or extended diagnostics. Scope is confirmed before proceeding.
+    </div>
   </div>
 </footer>
 
 <script>
-  document.getElementById("y").textContent = new Date().getFullYear();
+  function fakeSubmit(e){
+    e.preventDefault();
+    alert("Booked (demo). Next step: connect this form to your email inbox (Formspree/Netlify/Cloudflare) so you receive requests instantly.");
+    return false;
+  }
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
