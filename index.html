@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SunCoast Tech Support | Fast Local Tech Help</title>
+  <meta name="description" content="SunCoast Tech Support provides fast, trusted tech help in Tampa Bay. Data transfers, Wi-Fi fixes, printer issues, and device cleanup. Book a deposit to reserve a slot." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a33;
+      --muted:#97a3b6;
+      --text:#e9eef7;
+      --accent:#54d6ff;
+      --accent2:#7c5cff;
+      --ok:#3ddc97;
+      --border: rgba(255,255,255,.10);
+      --radius: 18px;
+      --max: 1100px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: var(--font);
+      background:
+        radial-gradient(900px 500px at 18% 12%, rgba(124,92,255,.18), transparent 55%),
+        radial-gradient(700px 420px at 82% 22%, rgba(84,214,255,.16), transparent 52%),
+        linear-gradient(180deg, #070b14, var(--bg));
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:24px; }
+
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(7,11,20,.65);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 24px; max-width:var(--max); margin:0 auto;
+    }
+    .brand{ display:flex; gap:10px; align-items:center; font-weight:700; }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+    }
+    .tag{ font-size:12px; color:var(--muted); }
+
+    .btn{
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      font-weight:650;
+      cursor:pointer;
+    }
+    .btn.primary{
+      border:1px solid rgba(84,214,255,.35);
+      background: linear-gradient(135deg, rgba(84,214,255,.22), rgba(124,92,255,.18));
+    }
+
+    .hero{
+      padding:50px 0;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:24px;
+    }
+    @media (max-width:900px){
+      .hero{ grid-template-columns:1fr; }
+    }
+
+    h1{
+      font-size: clamp(32px,4vw,54px);
+      margin:0 0 12px;
+      line-height:1.05;
+    }
+    .sub{
+      color:var(--muted);
+      max-width:60ch;
+      margin-bottom:18px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px;
+    }
+
+    .section{ padding:28px 0; }
+    .section h2{ margin-bottom:8px; }
+    .lead{ color:var(--muted); max-width:75ch; }
+
+    .services{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:14px;
+    }
+    @media (max-width:900px){
+      .services{ grid-template-columns:1fr; }
+    }
+
+    form{ display:grid; gap:10px; }
+    input, textarea, select{
+      width:100%;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(15,26,51,.55);
+      color:var(--text);
+    }
+    textarea{ min-height:100px; }
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:28px 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <div>SunCoast Tech Support</div>
+        <div class="tag">A Tampa Bay tech-support service · by 88 Bit Diamond Hands</div>
+      </div>
+    </div>
+    <a href="#contact" class="btn primary">Book Help</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Local tech help.<br>Fast. Clear. Trusted.</h1>
+      <p class="sub">
+        We help Tampa Bay residents and home offices fix device chaos —
+        data transfers, Wi-Fi problems, printers, and secure device cleanup.
+      </p>
+      <a href="#pricing" class="btn primary">Reserve a Slot</a>
+    </div>
+
+    <div class="card">
+      <h3>Quick facts</h3>
+      <p class="sub">
+        • Free 15-minute triage for new customers<br>
+        • Remote or on-site options<br>
+        • Clearwater · Dunedin · Largo · Palm Harbor
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <h2>Services</h2>
+    <p class="lead">Pick the outcome you want. We’ll handle the technical details.</p>
+
+    <div class="services">
+      <div class="card">
+        <h3>Data Transfer & Setup</h3>
+        <p class="sub">Move files from old computers or phones to new devices safely.</p>
+      </div>
+      <div class="card">
+        <h3>Wi-Fi & Printer Fixes</h3>
+        <p class="sub">Dead zones, slow speeds, printers offline — resolved.</p>
+      </div>
+      <div class="card">
+        <h3>Device Cleanup & Recycling</h3>
+        <p class="sub">Secure wipe, resale guidance, or responsible recycling.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <h2>Reserve Your Slot</h2>
+    <p class="lead">
+      A small deposit locks your appointment and is applied to your final invoice.
+    </p>
+
+    <a class="btn primary" href="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK" target="_blank">
+      Pay $49 Deposit
+    </a>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2>Request Help</h2>
+    <p class="lead">Answer a few questions so we can show up prepared.</p>
+
+    <div class="card">
+      <form onsubmit="return false;">
+        <input placeholder="Name" required>
+        <input placeholder="Phone" required>
+        <input placeholder="Email" type="email" required>
+        <textarea placeholder="Describe your issue"></textarea>
+        <button class="btn primary">Submit Request</button>
+      </form>
+      <p class="tag">
+        Privacy note: Do not include passwords. We’ll confirm details before work begins.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      © <span id="year"></span> SunCoast Tech Support · Operated by 88 Bit Diamond Hands
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
