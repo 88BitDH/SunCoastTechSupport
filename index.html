@@ -3,21 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SunCoast Tech Support | Two Simple Packages</title>
-  <meta name="description" content="SunCoast Tech Support in Tampa Bay. Two simple options: Device Cleanup (migrations, secure wipe, recycling) or Troubleshooting (break-fix). Book in minutes." />
+  <title>SunCoast Tech Support | Simple, On‑Site Tech Help</title>
+  <meta name="description" content="SunCoast Tech Support offers two simple on‑site service packages in Tampa Bay: Troubleshooting or Device Cleanup & Data Preservation. Licensed, insured, and veteran‑owned." />
 
   <style>
     :root{
       --bg:#070b14;
-      --panel:#0f1a33;
       --text:#e9eef7;
       --muted:#97a3b6;
-
-      /* Brand accents – adjust to match your logo */
-      --accent:#0fb8ff;   /* primary */
-      --accent2:#5a5cff;  /* secondary */
-      --accent3:#00d18f;  /* success */
-
+      --accent:#0fb8ff;
+      --accent2:#5a5cff;
       --border: rgba(255,255,255,.12);
       --radius:18px;
       --max:1100px;
@@ -29,177 +24,77 @@
     body{
       margin:0;
       font-family:var(--font);
-      background:
-        radial-gradient(900px 520px at 14% 10%, rgba(90,92,255,.22), transparent 58%),
-        radial-gradient(760px 460px at 86% 18%, rgba(15,184,255,.20), transparent 56%),
-        linear-gradient(180deg, #050814, var(--bg));
+      background: linear-gradient(180deg, #050814, var(--bg));
       color:var(--text);
-      line-height:1.5;
     }
 
-    a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:var(--max); margin:0 auto; padding:24px; }
 
     header{
-      position:sticky; top:0; z-index:10;
-      backdrop-filter: blur(10px);
-      background: rgba(5,8,20,.68);
+      background:#050814;
       border-bottom:1px solid var(--border);
     }
+
     .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 24px; max-width:var(--max); margin:0 auto; gap:12px;
+      display:flex; justify-content:space-between; align-items:center;
     }
-    .brand{ display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.2px; }
-    .logo-img{
-      width:34px; height:34px; max-width:34px; max-height:34px;
-      object-fit:contain; display:block;
-      filter: drop-shadow(0 10px 22px rgba(0,0,0,.35));
-    }
+
+    .brand{ display:flex; gap:10px; align-items:center; font-weight:800; }
+    .logo-img{ width:34px; height:34px; object-fit:contain; }
     .tag{ font-size:12px; color:var(--muted); }
 
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px; border-radius:14px; border:1px solid var(--border);
-      background: rgba(255,255,255,.06); font-weight:700; cursor:pointer;
-      transition: transform .06s ease, background .15s ease, border-color .15s ease;
-      white-space:nowrap;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      font-weight:700;
     }
-    .btn:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
     .btn.primary{
       border-color: rgba(15,184,255,.45);
       background: linear-gradient(135deg, rgba(15,184,255,.25), rgba(90,92,255,.22));
     }
-    .btn.ghost{ border-color: rgba(90,92,255,.45); }
 
-    .hero{
-      padding:44px 0 22px;
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:22px;
-      align-items:stretch;
-    }
-    @media (max-width: 940px){ .hero{ grid-template-columns:1fr; padding-top:28px; } }
-
-    h1{
-      font-size: clamp(32px,4vw,54px);
-      line-height:1.05;
-      margin:0 0 12px;
-      letter-spacing:-.02em;
-    }
-    .sub{ color:var(--muted); max-width:68ch; margin:0 0 16px; }
-
-    .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
-    .chip{
-      font-size:13px; color: rgba(233,238,247,.92);
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.05);
-      padding:7px 10px; border-radius:999px;
-    }
-    .chip strong{ color: var(--accent3); }
+    h1{ font-size:clamp(32px,4vw,50px); }
+    .sub{ color:var(--muted); }
 
     .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      background: rgba(255,255,255,.05);
       border:1px solid var(--border);
       border-radius:var(--radius);
-      box-shadow: var(--shadow);
+      padding:18px;
+      box-shadow:var(--shadow);
     }
 
-    .aside{ padding:18px; }
-    .aside h3{ margin:0 0 6px; font-size:16px; }
-    .aside p{ margin:0 0 14px; color:var(--muted); font-size:14px; }
-
-    .miniGrid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-    .mini{
-      padding:12px; border-radius:16px;
-      border:1px solid var(--border);
-      background: rgba(15,26,51,.55);
+    .packages{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
     }
-    .mini .k{ font-size:12px; color:var(--muted); }
-    .mini .v{ margin-top:3px; font-weight:800; }
+    @media(max-width:900px){ .packages{ grid-template-columns:1fr; } }
 
-    .section{ padding:26px 0; }
-    .section h2{ margin:0 0 8px; font-size:26px; }
-    .lead{ margin:0 0 18px; color:var(--muted); max-width:80ch; }
-
-    .packages{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
-    @media (max-width: 980px){ .packages{ grid-template-columns:1fr; } }
-
-    .pkg{ padding:18px; }
-    .pkgTop{ display:flex; justify-content:space-between; gap:12px; align-items:flex-start; flex-wrap:wrap; }
-    .badge{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 10px; border-radius:999px;
-      border:1px solid var(--border); background: rgba(255,255,255,.05);
-      font-size:12px;
-    }
-    .dot{
-      width:8px; height:8px; border-radius:999px;
-      background: var(--accent3);
-      box-shadow: 0 0 0 6px rgba(0,209,143,.18);
-    }
-    .price{ font-size:34px; font-weight:900; line-height:1; }
-    .per{ font-size:13px; color:var(--muted); margin-top:3px; }
-    .who{
-      margin:10px 0 0; font-size:14px;
-      border-left: 3px solid rgba(15,184,255,.55);
-      padding-left:12px;
-    }
-    ul{ margin:10px 0 0; padding-left:18px; }
-    li{ margin:6px 0; color:var(--muted); }
-
-    .promise{
-      margin-top:12px; padding:12px; border-radius:16px;
-      border:1px solid rgba(15,184,255,.35);
-      background: linear-gradient(135deg, rgba(15,184,255,.18), rgba(255,255,255,.03));
-      font-size:14px;
-    }
-    .promise.green{ border-color: rgba(0,209,143,.45); }
-
-    .ctaRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
-
-    details{
-      border:1px solid var(--border); background: rgba(255,255,255,.04);
-      border-radius:16px; padding:12px 14px;
-    }
-    details + details{ margin-top:10px; }
-    summary{ cursor:pointer; font-weight:800; list-style:none; }
-    summary::-webkit-details-marker{ display:none; }
-    details p{ margin:10px 0 0; color:var(--muted); }
-
-    .cols{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
-    @media (max-width: 980px){ .cols{ grid-template-columns:1fr; } }
-
-    form{ display:grid; gap:10px; }
-    label{ font-size:13px; color:var(--muted); }
-    input, textarea, select{
-      width:100%; padding:12px; border-radius:14px; border:1px solid var(--border);
-      background: rgba(15,26,51,.55); color:var(--text); font-family:var(--font);
-    }
-    textarea{ min-height:110px; resize:vertical; }
-    .row2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-    @media (max-width: 520px){ .row2{ grid-template-columns:1fr; } }
-
-    .fine{ font-size:12px; color:var(--muted); margin-top:10px; }
+    .price{ font-size:30px; font-weight:900; }
+    ul{ padding-left:18px; }
+    li{ color:var(--muted); margin:6px 0; }
 
     footer{
       border-top:1px solid var(--border);
-      padding:28px 0 40px; color:var(--muted); font-size:13px;
+      color:var(--muted);
+      font-size:13px;
+      padding:24px 0;
     }
-    .footgrid{ display:grid; grid-template-columns: 1.2fr .8fr; gap:14px; }
-    @media (max-width: 920px){ .footgrid{ grid-template-columns:1fr; } }
   </style>
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
+  <div class="wrap nav">
     <div class="brand">
-      <img src="assets/logo.png" alt="SunCoast Tech Support Logo" class="logo-img">
+      <img src="assets/logo.png" class="logo-img" alt="SunCoast Tech Support">
       <div>
         <div>SunCoast Tech Support</div>
-        <div class="tag">Tampa Bay onsite/remote tech help · by 88 Bit Diamond Hands</div>
+        <div class="tag">Licensed • Insured • Veteran‑Owned</div>
       </div>
     </div>
     <a href="#packages" class="btn primary">Choose a Package</a>
@@ -208,137 +103,52 @@
 
 <main class="wrap">
 
-  <section class="hero">
-    <div>
-      <h1>Pick Package A or B.<br>We handle the rest.</h1>
-      <p class="sub">
-        Two simple options designed for real life: <strong>Device Cleanup</strong> or <strong>Troubleshooting</strong>.
-        No guesswork. No menu pricing.
-      </p>
-      <div class="ctaRow">
-        <a class="btn primary" href="#packages">View packages</a>
-        <a class="btn ghost" href="#contact">Ask a question</a>
-      </div>
-    </div>
-
-    <aside class="card aside">
-      <h3>Simple promise. Real results.</h3>
-      <p>Choose A or B. We show up prepared and execute.</p>
-      <div class="miniGrid">
-        <div class="mini"><div class="k">Typical visit</div><div class="v">60–120 min</div></div>
-        <div class="mini"><div class="k">Fast booking</div><div class="v">Minutes</div></div>
-        <div class="mini"><div class="k">Remote first</div><div class="v">When possible</div></div>
-        <div class="mini"><div class="k">Onsite</div><div class="v">Available</div></div>
-      </div>
-    </aside>
+  <section>
+    <h1>On‑site tech help, without the confusion.</h1>
+    <p class="sub">
+      We come to your home or home office to take care of the problem for you.
+      Choose a package and we handle the rest.
+    </p>
   </section>
 
-  <section class="section" id="packages">
-    <h2>Two packages. Zero confusion.</h2>
-    <p class="lead">Pick A to clean it all up. Pick B to fix it now.</p>
+  <section id="packages">
+    <h2>Two Packages</h2>
 
     <div class="packages">
 
-      <div class="card pkg">
-        <div class="pkgTop">
-          <div>
-            <div class="badge"><span class="dot"></span><strong>Package A</strong> · Device Cleanup & Migration</div>
-            <h3>Make the tech pile disappear — safely.</h3>
-          </div>
-          <div>
-            <div class="price">$249</div>
-            <div class="per">starting</div>
-          </div>
-        </div>
-
-        <div class="who"><strong>Best for:</strong> upgrades, messy files, old devices.</div>
+      <div class="card">
+        <h3>Package B — Troubleshooting & Repair</h3>
+        <div class="price">$179</div>
+        <p class="tag">First 90 minutes</p>
         <ul>
-          <li>Data migration to new device</li>
-          <li>Setup, updates, and polish</li>
-          <li>Backup confirmation</li>
-          <li>Secure wipe (optional)</li>
-          <li>Recycling/resale guidance</li>
+          <li>Desktop or laptop troubleshooting</li>
+          <li>Wi‑Fi, internet, email, slow computers</li>
+          <li>On‑site service included</li>
+          <li>Free 15‑minute consultation for new clients</li>
         </ul>
-
-        <div class="promise"><strong>Risk reversal:</strong> Stop in first 15 minutes if no progress.</div>
-        <div class="promise green"><strong>Added value:</strong> Folder + backup habit so it stays clean.</div>
-
-        <div class="ctaRow">
-          <a class="btn primary" href="https://buy.stripe.com/REPLACE_PACKAGE_A_LINK">Choose Package A</a>
-        </div>
       </div>
 
-      <div class="card pkg">
-        <div class="pkgTop">
-          <div>
-            <div class="badge"><span class="dot"></span><strong>Package B</strong> · Troubleshooting</div>
-            <h3>Fix the thing stopping your day.</h3>
-          </div>
-          <div>
-            <div class="price">$179</div>
-            <div class="per">first 90 min</div>
-          </div>
-        </div>
-
-        <div class="who"><strong>Best for:</strong> Wi‑Fi, printer, email, slow computer.</div>
+      <div class="card">
+        <h3>Package A — Device Cleanup & Data Preservation</h3>
+        <div class="price">$249</div>
+        <p class="tag">Most jobs completed in one visit</p>
         <ul>
-          <li>Rapid diagnosis</li>
-          <li>Fix and verify</li>
-          <li>Stability + security tune</li>
-          <li>Plain-English recap</li>
+          <li>Preserve family photos and videos</li>
+          <li>Consolidate multiple computers</li>
+          <li>Move data to USB, cloud, or external drive</li>
+          <li>Prepare devices for recycling</li>
+          <li>Free 15‑minute consultation included</li>
         </ul>
-
-        <div class="promise"><strong>Risk reversal:</strong> Stop in first 30 minutes if no path forward.</div>
-        <div class="promise green"><strong>Added value:</strong> Mini health check included.</div>
-
-        <div class="ctaRow">
-          <a class="btn primary" href="https://buy.stripe.com/REPLACE_PACKAGE_B_LINK">Choose Package B</a>
-        </div>
       </div>
 
-    </div>
-  </section>
-
-  <section class="section" id="faq">
-    <h2>FAQ</h2>
-    <details><summary>Do you offer remote support?</summary><p>Yes. Remote first when possible.</p></details>
-    <details><summary>Is my data safe?</summary><p>Privacy-first handling. No passwords collected.</p></details>
-    <details><summary>What areas do you serve?</summary><p>Tampa Bay with priority in Clearwater, Dunedin, Largo, Palm Harbor.</p></details>
-  </section>
-
-  <section class="section" id="contact">
-    <h2>Request help</h2>
-    <div class="cols">
-      <div class="card pkg">
-        <form onsubmit="return false;">
-          <label>Name</label><input required>
-          <label>Phone</label><input required>
-          <label>Email</label><input type="email" required>
-          <label>Package</label>
-          <select required><option>Package A</option><option>Package B</option></select>
-          <label>Details</label><textarea></textarea>
-          <button class="btn primary">Submit</button>
-        </form>
-      </div>
-      <div class="card pkg">
-        <p><strong>Direct:</strong></p>
-        <p>Phone: (727) 000‑0000<br>Email: help@yourdomain.com</p>
-      </div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <div class="wrap footgrid">
-    <div class="brand">
-      <img src="assets/logo.png" class="logo-img">
-      <div>
-        <div>SunCoast Tech Support</div>
-        <div class="tag">Operated by 88 Bit Diamond Hands</div>
-      </div>
-    </div>
-    <div class="fine">© <span id="y"></span> SunCoast Tech Support</div>
+  <div class="wrap">
+    © <span id="y"></span> SunCoast Tech Support
   </div>
 </footer>
 
