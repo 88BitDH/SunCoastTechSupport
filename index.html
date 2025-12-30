@@ -346,7 +346,6 @@
       .tagline-badges{ display:none; }
 
       /* Keep only Call Now in header on mobile (Book stays in hero + bottom bar) */
-      header .ctaRow a.btn.primary{ display:none; }
       header .ctaRow{ gap:8px; }
       header .ctaRow a.btn.call{ padding:12px 14px; }
 
@@ -378,6 +377,15 @@
     @media (max-width: 720px){
       .mobileBar{ display:flex; }
     }
+  
+    /* ===== Mobile form spacing (v14) ===== */
+    @media (max-width: 520px){
+      .ctaRow{ flex-direction:column; align-items:stretch; }
+      .ctaRow .btn, .ctaRow button.btn{ width:100%; }
+      .ctaRow .pill{ width:100%; text-align:center; }
+      input, textarea, select{ font-size:18px; padding:14px 12px; }
+    }
+
   </style>
 </head>
 
@@ -399,7 +407,6 @@
     </div>
     <div class="ctaRow" style="margin:0;">
       <a href="#contact" class="btn primary">Book Your Free 15-Min Consultation</a>
-      <a href="tel:+17270000000" class="btn call">Call Now</a>
     </div>
   </div>
 </header>
@@ -419,7 +426,7 @@
       <div class="ctaRow">
         <a class="btn primary" href="#contact">Book Your Free 15-Min Consultation</a>
         <a class="btn call" href="tel:+17270000000">Call Now</a>
-        <a class="btn secondary" href="#packages">View packages</a>
+        <a class="btn secondary" href="#packageA">View packages</a>
       </div>
     </div>
 
@@ -448,6 +455,17 @@
     </aside>
   </section>
 
+
+  <!-- TRUST -->
+  <section class="section" id="trust" style="padding-top:10px;">
+    <div class="card" style="padding:16px;">
+      <div class="pill" style="display:inline-flex; margin-bottom:10px;">Trusted local support</div>
+      <p class="lead" style="margin:0;">
+        <strong>Licensed • Insured • Veteran-Owned.</strong> You’ll work directly with an experienced local technician — not a call center or rotating contractors.
+      </p>
+    </div>
+  </section>
+
   <!-- PACKAGES -->
   <section class="section" id="packages">
     <h2>Choose Package A or Package B</h2>
@@ -459,7 +477,7 @@
     <div class="packages">
 
       <!-- LEFT: Package A -->
-      <div class="card pkg" aria-label="Package A - Troubleshooting">
+      <div class="card pkg" id="packageA" aria-label="Package A - Troubleshooting">
         <div class="pkgHead">
           <div>
             <div class="badge"><span class="dot" aria-hidden="true"></span>Package A · Troubleshooting & Repair</div>
@@ -490,11 +508,7 @@
           <li><strong>Not supported:</strong> broken monitors/printers (we don’t repair them)</li>
         </ul>
 
-        <div class="guarantee">
-          <strong>🛡️ Guarantee (with conditions):</strong>
-          If we can’t identify a clear cause and a practical next step within the first 30 minutes,
-          you can stop the service and you won’t be charged beyond the new-client consultation.
-        </div>
+        
 
         <div class="pkgCtas">
           <a class="btn primary" href="#contact">Book Package A</a>
@@ -505,8 +519,7 @@
           Additional computers can be handled during the same visit. Scope and pricing are confirmed during the free consultation.
         </div>
 
-        <div class="fine"><strong>Payment:</strong> credit card.</div>
-      </div>
+        </div>
 
       <!-- RIGHT: Package B -->
       <div class="card pkg" aria-label="Package B - Device Cleanup & Data Preservation">
@@ -542,11 +555,7 @@
           <li><strong>Phones/handhelds:</strong> limited support, reviewed case-by-case</li>
         </ul>
 
-        <div class="guarantee">
-          <strong>🛡️ Guarantee (with conditions):</strong>
-          If we can’t safely locate and begin preserving your data during the visit,
-          you can stop and you won’t be charged beyond the new-client consultation.
-        </div>
+        
 
         <div class="pkgCtas">
           <a class="btn primary" href="#contact">Book Package B</a>
@@ -558,6 +567,12 @@
         </div>
 
         <div class="fine"><strong>Note:</strong> Recycling is tied to a purchased package (not standalone).</div>
+
+        <div class="guarantee">
+          <strong>🛡️ Guarantee (with conditions):</strong>
+          If we can’t safely locate and begin preserving your data during the visit,
+          you can stop and you won’t be charged beyond the new-client consultation.
+        </div>
       </div>
 
     </div>
@@ -565,10 +580,10 @@
 
   <!-- REVIEWS -->
   <section class="section" id="reviews">
-    <h2>Reviews</h2>
-    <p class="lead">Examples of what clients typically say. Replace with real reviews as you collect them.</p>
-
-    <div class="reviews">
+    <details class="collapseBlock card" style="padding:16px;">
+      <summary style="font-weight:950; font-size:20px;">Reviews (tap to expand/collapse)</summary>
+      <div style="height:10px;"></div>
+<div class="reviews">
       <div class="card review">
         <div class="stars">★★★★★</div>
         <blockquote>“He showed up on time, explained everything clearly, and my laptop was back to normal in under an hour.”</blockquote>
@@ -585,14 +600,15 @@
         <div class="whoSaid">— Small business owner, Clearwater</div>
       </div>
     </div>
+      </details>
   </section>
 
   <!-- WHAT HAPPENS NEXT -->
   <section class="section" id="next">
-    <h2>What Happens After You Reach Out</h2>
-    <p class="lead">Here’s exactly what to expect — simple and clear.</p>
-
-    <div class="steps">
+    <details class="collapseBlock card" style="padding:16px;">
+      <summary style="font-weight:950; font-size:20px;">What Happens After You Reach Out (tap to expand/collapse)</summary>
+      <div style="height:10px;"></div>
+<div class="steps">
       <div class="card step">
         <h3>1️⃣ Quick Conversation</h3>
         <p>We start with a free 15-minute consultation to understand what you’re dealing with and confirm the best next step.</p>
@@ -610,6 +626,7 @@
         <p>Before we finish, we confirm everything is working and answer any remaining questions so you’re not left guessing.</p>
       </div>
     </div>
+    </details>
   </section>
 
   <!-- CTA SECTION -->
@@ -640,60 +657,73 @@
     <div class="faqGrid">
       <details>
         <summary>❓ What areas do you serve?</summary>
-        <p>
-          Clearwater area coverage includes:
-          <strong>Belleair</strong>, <strong>Clearwater</strong>, <strong>Dunedin</strong>, <strong>Largo</strong>, <strong>Palm Harbor</strong>, <strong>Safety Harbor</strong>.
-          If you’re nearby and not listed, reach out — we may still be able to help.
-        </p>
+        <ul class="list" style="margin:10px 0 0; padding-left:18px;">
+          <li><strong>Belleair</strong></li>
+          <li><strong>Clearwater</strong></li>
+          <li><strong>Dunedin</strong></li>
+          <li><strong>Largo</strong></li>
+          <li><strong>Palm Harbor</strong></li>
+          <li><strong>Safety Harbor</strong></li>
+        </ul>
+        <p style="margin-top:10px;">If you’re nearby and not listed, reach out — we may still be able to help.</p>
+        
       </details>
 
 
       <details>
         <summary>❓ What if I have more than one computer?</summary>
-        <p>
-          That’s very common. Many households and home-based businesses have multiple computers that need data moved or cleaned up.
-          During the free 15-minute consultation, we’ll confirm how many devices are involved and whether everything can be handled during the same visit.
-        </p>
+        <ul class="list" style="margin:10px 0 0; padding-left:18px;">
+          <li>We handle multiple computers during the same visit whenever possible.</li>
+          <li>We confirm device count, scope, and pricing during the free 15‑minute consultation.</li>
+        </ul>
+        
       </details>
 
       <details>
         <summary>❓ What payment methods do you accept?</summary>
-        <p>
-          We accept <strong>credit card</strong>.. Payment is due at time of service unless otherwise arranged.
-        </p>
+        <ul class="list" style="margin:10px 0 0; padding-left:18px;">
+          <li><strong>Credit card</strong> accepted.</li>
+          <li>Payment is due at time of service unless otherwise arranged.</li>
+        </ul>
+        
       </details>
 
       <details>
         <summary>❓ How long do visits typically take?</summary>
-        <p>
-          Troubleshooting (Package A) is usually resolved within 60–90 minutes.
-          Device Cleanup (Package B) is commonly completed in one visit (often 90–180 minutes depending on data size and number of devices).
-        </p>
+        <ul class="list" style="margin:10px 0 0; padding-left:18px;">
+          <li>Package A: typically <strong>60–90 minutes</strong></li>
+          <li>Package B: commonly <strong>90–180 minutes</strong> (depends on data size + number of devices)</li>
+        </ul>
+        
       </details>
 
       <details>
         <summary>❓ Is on-site service always required?</summary>
-        <p>
-          No. On‑site support is provided <strong>as needed</strong>.
-          If the issue can be resolved over the phone or remotely, an on‑site visit is not required.
-        </p>
+        <ul class="list" style="margin:10px 0 0; padding-left:18px;">
+          <li>No. We start with phone/remote when appropriate.</li>
+          <li>On‑site support is provided <strong>as needed</strong>.</li>
+        </ul>
+        
       </details>
 
       <details>
         <summary>❓ What devices do you service?</summary>
-        <p>
-          We service desktop computers and laptops (working or broken). We do not repair broken monitors or printers.
-          Macs are accepted for recycling only (no Mac troubleshooting/repairs at this time).
-          Phones/handheld devices are limited and handled case-by-case.
-        </p>
+        <ul class="list" style="margin:10px 0 0; padding-left:18px;">
+          <li>Desktop computers and laptops (working or broken)</li>
+          <li>No repair for broken monitors or printers</li>
+          <li>Macs: recycling only</li>
+          <li>Phones/handhelds: limited, case‑by‑case</li>
+        </ul>
+        
       </details>
 
       <details>
         <summary>❓ Do you offer recycling as a standalone service?</summary>
-        <p>
-          No. Recycling is tied to a purchased service package (A or B) and not offered as a standalone pickup.
-          Network equipment (routers, switches, access points) can be recycled for an additional cost when paired with a package.
-        </p>
+        <ul class="list" style="margin:10px 0 0; padding-left:18px;">
+          <li>No — recycling is tied to a purchased package (A or B).</li>
+          <li>Network equipment recycling (routers/switches/APs) is available for an additional cost when paired with a package.</li>
+        </ul>
+        
       </details>
     </div>
   </section>
@@ -779,14 +809,10 @@
       </div>
 
       <div class="card" style="padding:18px;">
-        <h3 style="margin:0 0 8px;">Call now (replace)</h3>
-        <p class="sub" style="margin:0 0 12px;">
-          Prefer the phone? Call and we’ll do the free 15-minute consult.
-        </p>
-
-        <div class="ctaRow" style="margin-top:0;">
+        <div class="pill" style="display:inline-flex; margin-bottom:10px;">Prefer the phone?</div>
+<div class="ctaRow" style="margin-top:0;">
           <a class="btn call" href="tel:+17270000000">Call Now</a>
-          <a class="btn secondary" href="#packages">View packages</a>
+          <a class="btn secondary" href="#packageA">View packages</a>
         </div>
 
         <div class="guarantee" style="border-color: rgba(0,209,143,.55); background: linear-gradient(135deg, rgba(0,209,143,.16), rgba(255,255,255,.04));">
@@ -794,7 +820,7 @@
         </div>
 
         <div class="fine">
-          Payment accepted: <strong>credit card</strong> or <strong>cash</strong>.
+          Payment accepted: <strong>credit card</strong> or <strong></strong>.
         </div>
       </div>
     </div>
