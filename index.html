@@ -558,17 +558,88 @@
     .pkg:before{ opacity:.10; }
     .pkg:after{ opacity:.22; }
 
+    /* Force primary CTA text black */
+    .btn.primary{ color:#000 !important; }
+
   
-    /* Subtle background image layer */
-    body::before{
-      content:"";
-      position:fixed; inset:0;
-      background-image: url('assets/suncoast-homepage.jpg');
-      background-size: cover;
-      background-position: center;
-      opacity: .08;
-      pointer-events:none;
-      z-index:-1;
+    /* Hero photo prominence */
+    .heroMedia{ padding:14px 16px 0 16px; }
+    .heroPhoto{
+      width:100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: rgba(255,255,255,.75);
+    }
+    @media (max-width:720px){
+      .heroPhoto{ aspect-ratio: 16 / 12; }
+      .heroCaption{ margin-bottom:6px; }
+    }
+
+  
+    /* Package media (simple illustrations) */
+    .pkgMedia{
+      margin-top:12px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.75);
+      padding:12px;
+    }
+    .pkgMedia svg{ display:block; width:100%; height:auto; }
+
+  
+    /* ===== Pill contrast fix (high priority) ===== */
+    .pill{
+      color:#0b1324 !important;
+      background:#e6f8ee !important;
+      border-color:#9adfbe !important;
+      font-weight:900;
+    }
+
+  
+    /* ===== Hero urgency pill contrast (final) ===== */
+    .pill{
+      background:#dff5e7 !important;
+      color:#0b1324 !important;
+      border-color:#63c79a !important;
+      font-weight:900;
+    }
+    .pill span, .pill strong{
+      color:#0b1324 !important;
+      opacity:1 !important;
+    }
+
+  
+    /* ===== Hero text clarity ===== */
+    h1{
+      color:#0b1324;
+    }
+    .sub, .support{
+      color:#1f2a44;
+      font-weight:800;
+    }
+
+  
+    /* ===== CTA button clarity ===== */
+    .btn.primary{
+      background:#6fd3ff;
+      color:#000 !important;
+      border-color:#2bb7f5;
+      font-weight:900;
+    }
+    .btn.call{
+      background:#e7fff2;
+      color:#0b1324;
+      border-color:#63c79a;
+      font-weight:900;
+    }
+
+  
+    /* ===== Match Call Now to primary CTA ===== */
+    .btn.call{
+      background:#6fd3ff !important;
+      color:#000 !important;
+      border-color:#2bb7f5 !important;
+      font-weight:900;
     }
 
   </style>
@@ -733,6 +804,27 @@
           <li><strong>Not supported:</strong> broken monitor/printer repairs</li>
         </ul>
 
+        <div class="pkgMedia" aria-hidden="true">
+          <svg viewBox="0 0 720 220" role="img" aria-label="Troubleshooting illustration">
+            <defs>
+              <linearGradient id="pa" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="rgba(0,184,255,.30)"/>
+                <stop offset="1" stop-color="rgba(255,204,51,.22)"/>
+              </linearGradient>
+            </defs>
+            <rect x="10" y="10" width="700" height="200" rx="22" fill="url(#pa)" stroke="rgba(10,19,36,.12)"/>
+            <rect x="70" y="55" width="240" height="140" rx="18" fill="rgba(255,255,255,.85)" stroke="rgba(10,19,36,.12)"/>
+            <rect x="95" y="78" width="190" height="20" rx="10" fill="rgba(0,184,255,.22)"/>
+            <rect x="95" y="110" width="155" height="16" rx="8" fill="rgba(10,19,36,.10)"/>
+            <rect x="95" y="136" width="175" height="16" rx="8" fill="rgba(10,19,36,.10)"/>
+            <circle cx="520" cy="105" r="42" fill="rgba(255,255,255,.85)" stroke="rgba(10,19,36,.12)"/>
+            <path d="M520 80 L535 95 L510 120" fill="none" stroke="rgba(10,19,36,.55)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="445" y="150" width="150" height="28" rx="14" fill="rgba(255,255,255,.80)" stroke="rgba(10,19,36,.12)"/>
+            <text x="470" y="170" font-family="ui-sans-serif, system-ui" font-size="18" font-weight="800" fill="rgba(10,19,36,.75)">Fix + Confirm</text>
+          </svg>
+        </div>
+
+
         <div class="pkgCtas">
           <a class="btn primary" href="#contact">Book Package A</a>
           <a class="btn secondary" href="tel:+17736698868">Call Now</a>
@@ -776,6 +868,28 @@
           <li><strong>Macs:</strong> accepted for recycling only (no Mac repairs at this time)</li>
           <li><strong>Phones/handhelds:</strong> limited support, reviewed case-by-case</li>
         </ul>
+
+        <div class="pkgMedia" aria-hidden="true">
+          <svg viewBox="0 0 720 220" role="img" aria-label="Data preservation illustration">
+            <defs>
+              <linearGradient id="pb" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="rgba(255,204,51,.30)"/>
+                <stop offset="1" stop-color="rgba(0,209,143,.18)"/>
+              </linearGradient>
+            </defs>
+            <rect x="10" y="10" width="700" height="200" rx="22" fill="url(#pb)" stroke="rgba(10,19,36,.12)"/>
+            <rect x="80" y="55" width="250" height="140" rx="18" fill="rgba(255,255,255,.85)" stroke="rgba(10,19,36,.12)"/>
+            <rect x="110" y="85" width="190" height="22" rx="11" fill="rgba(255,204,51,.22)"/>
+            <rect x="110" y="118" width="160" height="18" rx="9" fill="rgba(10,19,36,.10)"/>
+            <rect x="110" y="146" width="175" height="18" rx="9" fill="rgba(10,19,36,.10)"/>
+            <rect x="430" y="70" width="210" height="54" rx="18" fill="rgba(255,255,255,.85)" stroke="rgba(10,19,36,.12)"/>
+            <path d="M465 97 h75" stroke="rgba(10,19,36,.45)" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="585" cy="97" r="18" fill="rgba(0,209,143,.25)" stroke="rgba(10,19,36,.12)"/>
+            <rect x="430" y="138" width="210" height="54" rx="18" fill="rgba(255,255,255,.85)" stroke="rgba(10,19,36,.12)"/>
+            <text x="456" y="171" font-family="ui-sans-serif, system-ui" font-size="18" font-weight="800" fill="rgba(10,19,36,.75)">Organize + Save</text>
+          </svg>
+        </div>
+
 
         <div class="pkgCtas">
           <a class="btn primary" href="#contact">Book Package B</a>
