@@ -508,6 +508,69 @@
       textarea{ min-height:140px; }
     }
 
+  
+    /* ===== Light theme contrast fixes (v16) ===== */
+    body{ color: var(--text); }
+    .sub, .lead, details p, .list li, .fine{ color: var(--muted); }
+    .support, .who, blockquote, .stars{ color: var(--text); }
+
+    /* Pills and badges */
+    .pill{
+      background: rgba(255,255,255,.80);
+      color: var(--text);
+      border-color: rgba(10,19,36,.14);
+    }
+    .badge{
+      background: rgba(255,255,255,.85);
+      color: var(--text);
+      border-color: rgba(10,19,36,.14);
+    }
+
+    /* Primary CTA: black lettering */
+    .btn.primary{ color: #000; }
+    .btn.call{ color: var(--text); }
+    .btn.secondary{ color: var(--text); }
+
+    /* Section label pills like 'Trusted in-home support' and 'We support...' */
+    #trust .pill, #brands .pill{
+      background: rgba(255,255,255,.90);
+      color: var(--text);
+      border-color: rgba(10,19,36,.14);
+    }
+
+    /* Guarantee panels */
+    .guarantee{
+      color: var(--text);
+    }
+    .guarantee strong{ color: var(--text); }
+
+    /* Ensure headings are dark */
+    h1, h2, h3, summary{ color: var(--text); }
+
+    /* Logo strip pills */
+    .logoStrip .logoPill{
+      background: rgba(255,255,255,.85);
+      color: var(--text);
+      border-color: rgba(10,19,36,.14);
+    }
+
+    /* Package background overlays: reduce opacity for light theme */
+    .pkg:before{ opacity:.10; }
+    .pkg:after{ opacity:.22; }
+
+  
+    /* Subtle background image layer */
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      background-image: url('assets/suncoast-homepage.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: .08;
+      pointer-events:none;
+      z-index:-1;
+    }
+
   </style>
 </head>
 
@@ -626,6 +689,7 @@
     </div>
   </section>
 
+  
   <!-- PACKAGES -->
   <section class="section" id="packages">
     <h2>Choose Package A or Package B</h2>
@@ -639,6 +703,48 @@
 
       <!-- Package A -->
       <div class="card pkg" id="packageA" aria-label="Package A - Troubleshooting">
+        <div class="pkgHead">
+          <div>
+            <div class="badge"><span class="dot" aria-hidden="true"></span><span class="pkgIcon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-3 3-3-3 3-3z"/></svg></span>Package A · Troubleshooting & Repair</div>
+            <div class="pkgTitle">Fix the thing that’s stopping your day.</div>
+            <div class="pkgTagline">Clear plan. Fast fix. Confirmed before we leave.</div>
+          </div>
+          <div class="priceBox">
+            <div class="price">$179</div>
+            <div class="per">first 90 minutes · first available</div>
+          </div>
+        </div>
+
+        <div class="callouts">
+          <span class="pill">Free 15‑min call (new clients)</span>
+          <span class="pill">In‑home + remote</span>
+          <span class="pill">Plain-English recap</span>
+        </div>
+
+        <div class="who">
+          <strong>Best for:</strong> “My computer is acting up, and I need help fast.”
+        </div>
+
+        <ul class="list">
+          <li><strong>Desktop & laptop troubleshooting</strong> (working or not)</li>
+          <li>Slow performance, pop-ups, login/account issues, email issues</li>
+          <li>Wi‑Fi/basic home office connectivity issues</li>
+          <li>We confirm the fix + answer questions before we finish</li>
+          <li><strong>Not supported:</strong> broken monitor/printer repairs</li>
+        </ul>
+
+        <div class="pkgCtas">
+          <a class="btn primary" href="#contact">Book Package A</a>
+          <a class="btn secondary" href="tel:+17736698868">Call Now</a>
+        </div>
+
+        <div class="fine" style="border-top:1px dashed var(--border); padding-top:10px; margin-top:10px;">
+          Additional computers can be handled during the same visit. Scope and pricing are confirmed during the free consultation.
+        </div>
+      </div>
+
+      <!-- Package B -->
+      <div class="card pkg" id="packageB" aria-label="Package B - Device Cleanup & Data Preservation">
         <div class="pkgHead">
           <div>
             <div class="badge"><span class="dot" aria-hidden="true"></span><span class="pkgIcon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M7 13h10"/></svg></span>Package B · Device Cleanup & Data Preservation</div>
@@ -685,6 +791,7 @@
 
     </div>
   </section>
+
 
   <!-- PARTNER BRANDS -->
   <section class="section" id="brands" style="padding-top:8px;">
@@ -1020,10 +1127,6 @@
   })();
 </script>
 
-<div class="mobileBar" role="navigation" aria-label="Quick actions">
-  <a class="btn call" href="tel:+17736698868" aria-label="Call SunCoast Tech Support">Call Now</a>
-  <a class="btn primary" href="#contact" aria-label="Book a free 15-minute consultation">Book Free Call</a>
-</div>
 
 </body>
 </html>
