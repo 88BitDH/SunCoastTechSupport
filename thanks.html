@@ -1,1 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thanks | SunCoast Tech Support</title>
+  <meta name="description" content="Thanks for contacting SunCoast Tech Support. We received your request and will reach out shortly." />
+  <style>
+    :root{
+      --bg:#070b14; --text:#f3f6ff; --muted:#c6d1e6; --border: rgba(255,255,255,.18);
+      --radius:20px; --max:900px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --shadow: 0 18px 55px rgba(0,0,0,.45);
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; font-family:var(--font); color:var(--text);
+      background:
+        radial-gradient(950px 540px at 18% 10%, rgba(90,92,255,.22), transparent 58%),
+        radial-gradient(780px 480px at 86% 16%, rgba(15,184,255,.18), transparent 56%),
+        linear-gradient(180deg, #050814, var(--bg));
+      min-height:100vh;
+      display:flex; align-items:center; justify-content:center;
+      padding:24px;
+    }
+    .card{
+      max-width:var(--max);
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+    h1{ margin:0 0 10px; font-size: clamp(28px,4vw,40px); line-height:1.1; }
+    p{ margin:0 0 14px; color:var(--muted); font-weight:700; line-height:1.6; font-size:18px; }
+    .row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+    a.btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:13px 18px; border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.08);
+      font-weight:900; text-decoration:none; color:inherit;
+      white-space:nowrap;
+    }
+    a.primary{
+      border-color: rgba(15,184,255,.70);
+      background: linear-gradient(135deg, rgba(15,184,255,.32), rgba(90,92,255,.28));
+    }
+    a.call{
+      border-color: rgba(0,209,143,.70);
+      background: linear-gradient(135deg, rgba(0,209,143,.20), rgba(255,255,255,.04));
+    }
+    .fine{ font-size:14px; color:rgba(198,209,230,.9); font-weight:700; }
+  </style>
+</head>
+<body>
+  <div class="card" role="main" aria-label="Thank you">
+    <h1>✅ Thanks — we received your request.</h1>
+    <p>We’ll reach out shortly to confirm details and the best next step (remote/phone vs on-site as needed).</p>
+    <div class="row">
+      <a class="btn call" href="tel:+17736698868">Call Now</a>
+      <a class="btn primary" href="/#contact">Back to site</a>
+    </div>
+    <p class="fine" style="margin-top:14px;">Licensed • Insured • Veteran-Owned • Clearwater area</p>
+  </div>
+</body>
+</html>
 
