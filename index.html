@@ -3,27 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SunCoast Tech Support | On-Site Tech Help</title>
-  <meta name="description" content="Clear, on-site IT help across the Clearwater area for homeowners, remote workers, and small businesses. Two simple packages. Free 15-minute consultation. Licensed, insured, veteran-owned." />
+  <title>SunCoast Tech Support | In-Home Computer Help (Clearwater)</title>
+
+  <!-- SEO: homeowner + "near me / open today" intent (kept natural; avoid spam) -->
+  <meta name="description" content="Warm, friendly in-home computer help for homeowners in Clearwater, Dunedin, Largo, Palm Harbor, Safety Harbor & Belleair. Same-day when available. Free 15-minute call (limited weekly slots). Troubleshooting, Wi‑Fi help, and data recovery guidance." />
 
   <style>
     :root{
-      --bg:#070b14;
-      --text:#f3f6ff;
-      --muted:#c6d1e6;
-      --muted2:#aebbd6;
+      --bg:#f6fbff;
+      --text:#0b1324;
+      --muted:#30415f;
+      --muted2:#4b5f84;
 
-      /* Brand accents (update to match your logo) */
-      --accent:#0fb8ff;
-      --accent2:#5a5cff;
-      --accent3:#00d18f;
+      /* Suncoast accents */
+      --accent:#00b8ff;   /* ocean */
+      --accent2:#ffcc33;  /* sun */
+      --accent3:#00d18f;  /* fresh green */
 
-      --border: rgba(255,255,255,.18);
+      --border: rgba(10,19,36,.12);
       --radius:20px;
       --max:1120px;
       --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      --shadow: 0 18px 55px rgba(0,0,0,.45);
-      --shadow2: 0 10px 28px rgba(0,0,0,.35);
+      --shadow: 0 18px 55px rgba(10,19,36,.12);
+      --shadow2: 0 10px 28px rgba(10,19,36,.10);
     }
 
     *{ box-sizing:border-box; }
@@ -36,9 +38,9 @@
       line-height:1.65;
       color:var(--text);
       background:
-        radial-gradient(950px 540px at 18% 10%, rgba(90,92,255,.22), transparent 58%),
-        radial-gradient(780px 480px at 86% 16%, rgba(15,184,255,.18), transparent 56%),
-        linear-gradient(180deg, #050814, var(--bg));
+        radial-gradient(900px 520px at 15% 8%, rgba(255,204,51,.40), transparent 60%),
+        radial-gradient(780px 480px at 85% 12%, rgba(0,184,255,.22), transparent 62%),
+        linear-gradient(180deg, #ffffff, var(--bg));
     }
 
     a{ color:inherit; text-decoration:none; }
@@ -48,8 +50,8 @@
     header{
       position:sticky; top:0; z-index:10;
       backdrop-filter: blur(10px);
-      background: rgba(5,8,20,.78);
-      border-bottom:1px solid var(--border);
+      background: rgba(255,255,255,.78);
+      border-bottom:1px solid var(--border); box-shadow: 0 8px 22px rgba(10,19,36,.06);
     }
     .nav{
       display:flex; align-items:center; justify-content:space-between;
@@ -74,18 +76,20 @@
 
     /* ===== Buttons ===== */
     .btn{
+      color: var(--text);
+
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:13px 18px;
       border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.08);
+      background: rgba(255,255,255,.85);
       font-weight:950;
       cursor:pointer;
       transition: transform .08s ease, background .15s ease, border-color .15s ease;
       white-space:nowrap;
       font-size:16px;
     }
-    .btn:hover{ background: rgba(255,255,255,.12); transform: translateY(-1px); }
+    .btn:hover{ background: rgba(255,255,255,.95); transform: translateY(-1px); }
     .btn.primary{
       border-color: rgba(15,184,255,.70);
       background: linear-gradient(135deg, rgba(15,184,255,.32), rgba(90,92,255,.28));
@@ -93,7 +97,7 @@
     }
     .btn.secondary{
       border-color: rgba(90,92,255,.60);
-      background: rgba(255,255,255,.08);
+      background: rgba(255,255,255,.85);
     }
     .btn.call{
       border-color: rgba(0,209,143,.70);
@@ -102,7 +106,7 @@
 
     /* ===== Cards / sections ===== */
     .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.70));
       border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow: var(--shadow2);
@@ -143,7 +147,7 @@
     @media (max-width: 520px){ .valueGrid{ grid-template-columns:1fr; } }
     .mini{
       border:1px solid var(--border);
-      background: rgba(10,18,36,.55);
+      background: rgba(255,255,255,.78);
       border-radius:16px;
       padding:14px;
     }
@@ -153,6 +157,77 @@
     .section{ padding:26px 0; }
     .section h2{ margin:0 0 8px; font-size:30px; letter-spacing:-.01em; }
     .lead{ margin:0 0 16px; color:var(--muted); max-width:92ch; font-weight:700; }
+
+    /* ===== Trust logo strip ===== */
+    .logoStrip{
+      display:flex; flex-wrap:wrap; gap:12px;
+      align-items:center; justify-content:center;
+      padding:12px;
+    }
+    .logoStrip .logoPill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      font-weight:900;
+      color: rgba(243,246,255,.96);
+      font-size:13px;
+    }
+    
+    .logoIcon{
+      width:18px; height:18px; display:inline-block;
+      border-radius:6px;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .logoIcon::after{
+      content:"";
+      position:absolute; inset:4px;
+      border-radius:4px;
+      background: linear-gradient(135deg, rgba(0,184,255,.35), rgba(255,204,51,.28));
+      opacity:.85;
+    }
+
+    .logoStrip img{
+      width:18px; height:18px; object-fit:contain;
+      filter: grayscale(100%) brightness(1.15);
+      opacity:.95;
+    }
+
+    
+    
+    /* Hero image (relatable) */
+    .heroMedia{
+      padding:14px 16px 0 16px;
+    }
+    .heroPhoto{
+      width:100%;
+      height:auto;
+      border-radius:18px;
+      border:1px solid var(--border);
+      box-shadow: 0 14px 34px rgba(10,19,36,.12);
+      display:block;
+    }
+    .heroCaption{
+      margin:10px 16px 0 16px;
+      font-size:13px;
+      color: var(--muted2);
+      font-weight:800;
+      line-height:1.4;
+    }
+
+    /* Hero illustration */
+    .heroArt{
+      padding:14px 16px 0 16px;
+    }
+    .heroArt svg{
+      display:block;
+      width:100%;
+      height:auto;
+    }
 
     /* ===== Packages ===== */
     .packages{
@@ -192,14 +267,36 @@
       position:relative;
       display:flex; justify-content:space-between; gap:12px; align-items:flex-start; flex-wrap:wrap;
       margin-bottom:10px;
-      min-height:98px; /* helps align pricing blocks */
+      min-height:98px;
     }
+    
+    
+    /* Package icons (simple, calm) */
+    .pkgIcon{
+      width:22px; height:22px; border-radius:8px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.75);
+      display:inline-flex; align-items:center; justify-content:center;
+      box-shadow: 0 8px 18px rgba(10,19,36,.08);
+      flex:0 0 auto;
+    }
+    .pkgIcon svg{ width:14px; height:14px; display:block; opacity:.95; }
+
+    .pkgIcon{
+      width:18px; height:18px; border-radius:6px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.85);
+      display:inline-flex; align-items:center; justify-content:center;
+      font-size:12px;
+      line-height:1;
+    }
+
     .badge{
       position:relative;
       display:inline-flex; align-items:center; gap:10px;
       padding:8px 10px; border-radius:999px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.08);
+      background: rgba(255,255,255,.85);
       font-size:13px; font-weight:950;
     }
     .dot{
@@ -238,45 +335,6 @@
 
     .pkgCtas{ position:relative; display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
     .fine{ font-size:13px; color:var(--muted2); margin-top:10px; font-weight:700; }
-
-    /* ===== Reviews ===== */
-    .reviews{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:12px;
-    }
-    @media (max-width: 980px){ .reviews{ grid-template-columns:1fr; } }
-
-    .review{ padding:16px; position:relative; overflow:hidden; }
-    .stars{
-      font-weight:950;
-      letter-spacing:.12em;
-      color: rgba(243,246,255,.98);
-      margin-bottom:8px;
-      font-size:16px;
-    }
-    blockquote{ margin:0; color: rgba(243,246,255,.98); font-weight:700; }
-    .whoSaid{ margin-top:10px; color:var(--muted2); font-size:13px; font-weight:950; }
-
-    /* ===== What Happens Next ===== */
-    .steps{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-    }
-    @media (max-width: 980px){ .steps{ grid-template-columns:1fr; } }
-
-    .step{ padding:16px; position:relative; overflow:hidden; }
-    .step .n{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:36px; height:36px; border-radius:12px;
-      background: linear-gradient(135deg, rgba(15,184,255,.34), rgba(90,92,255,.30));
-      border:1px solid rgba(255,255,255,.16);
-      font-weight:950;
-      margin-bottom:10px;
-    }
-    .step h3{ margin:0 0 6px; font-size:18px; }
-    .step p{ margin:0; color:var(--muted); font-weight:700; }
 
     /* ===== CTA panel ===== */
     .ctaPanel{ padding:18px; position:relative; overflow:hidden; }
@@ -317,7 +375,7 @@
       padding:13px 12px;
       border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(10,18,36,.55);
+      background: rgba(255,255,255,.78);
       color:var(--text);
       font-family:var(--font);
       outline:none;
@@ -335,29 +393,30 @@
       font-size:14px;
     }
     .footRow{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; }
-  
+
     /* ===== Mobile accessibility & conversion ===== */
     @media (max-width: 720px){
-      body{ font-size:19px; }
+      body{ font-size:19px; 
+      /* Price alignment (mobile) */
+      .pkgHead{ flex-direction:column; align-items:flex-start; gap:10px; }
+      .priceBox{ width:100%; text-align:center; margin-top:8px; }
+      .price{ width:100%; }
+      .per{ width:100%; }
+
+    }
       .nav{ padding:10px 16px; }
       .logo-img{ width:44px; height:44px; }
 
-      /* Reduce header crowding */
       .tagline-badges{ display:none; }
-
-      /* Keep only Call Now in header on mobile (Book stays in hero + bottom bar) */
-      header .ctaRow{ gap:8px; }
-      header .ctaRow a.btn.call{ padding:12px 14px; }
-
-      /* Breathing room for fixed bottom bar */
-      main.wrap{ padding-bottom:88px; }
+      main.wrap{ padding-bottom:92px; }
     }
 
-    /* Collapsing header on scroll */
     header.is-compact .nav{ padding:8px 16px; }
     header.is-compact .logo-img{ width:36px; height:36px; }
     header.is-compact .tagline-badges{ display:none; }
-    header.is-compact .btn{ padding:10px 12px; font-size:15px; }
+    header.is-compact .btn{
+      color: var(--text);
+ padding:10px 12px; font-size:15px; }
 
     /* Mobile sticky bottom CTA bar */
     .mobileBar{
@@ -377,13 +436,76 @@
     @media (max-width: 720px){
       .mobileBar{ display:flex; }
     }
-  
-    /* ===== Mobile form spacing (v14) ===== */
+
+    /* Mobile form spacing */
     @media (max-width: 520px){
       .ctaRow{ flex-direction:column; align-items:stretch; }
-      .ctaRow .btn, .ctaRow button.btn{ width:100%; }
+      .ctaRow .btn, .ctaRow button.btn{
+      color: var(--text);
+ width:100%; }
       .ctaRow .pill{ width:100%; text-align:center; }
       input, textarea, select{ font-size:18px; padding:14px 12px; }
+    }
+
+    /* Urgency badge */
+    .urgency{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(0,209,143,.55);
+      background: rgba(0,209,143,.12);
+      color: rgba(243,246,255,.98);
+      font-weight:950;
+      font-size:13px;
+      margin-top:10px;
+    }
+    .pulse{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent3);
+      box-shadow: 0 0 0 0 rgba(0,209,143,.55);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse{
+      0%{ box-shadow: 0 0 0 0 rgba(0,209,143,.55); }
+      70%{ box-shadow: 0 0 0 10px rgba(0,209,143,0); }
+      100%{ box-shadow: 0 0 0 0 rgba(0,209,143,0); }
+    }
+  
+    /* ===== Mobile UX enhancements (v15) ===== */
+    @media (max-width: 720px){
+      .wrap{ padding:18px; }
+      .section{ padding:22px 0; }
+      h1{ letter-spacing:-.015em; }
+      .sub{ font-size:18px; line-height:1.7; }
+      .support{ font-size:18px; line-height:1.55; }
+      .lead{ line-height:1.7; }
+      .card{ border-radius:18px; }
+      .pkg{ padding:16px; }
+      .pkgHead{ min-height:auto; }
+      .priceBox{ text-align:left; min-width:0; margin-top:8px; }
+      .price{ font-size:36px; }
+      .per{ font-size:13px; }
+      /* Make details blocks easier to tap */
+      details{ padding:14px 14px; }
+      summary{ padding:6px 0; }
+      /* Reduce visual clutter from pills */
+      .callouts .pill{ font-size:12px; padding:6px 10px; }
+    }
+
+    @media (max-width: 520px){
+      /* Shorter lines for readability */
+      .sub, .lead{ max-width: 46ch; }
+      /* Ensure buttons are comfortably tall */
+      .btn{
+      color: var(--text);
+ padding:14px 16px; }
+      /* Extra space between stacked buttons */
+      .ctaRow{ gap:12px; }
+      /* Keep form comfortable */
+      form{ gap:12px; }
+      textarea{ min-height:140px; }
     }
 
   </style>
@@ -391,7 +513,7 @@
 
 <body>
 
-<header>
+<header id="siteHeader">
   <div class="nav">
     <div class="brand">
       <img src="assets/logo.png" class="logo-img" alt="SunCoast Tech Support Logo">
@@ -401,12 +523,14 @@
           <span class="pill">Licensed</span>
           <span class="pill">Insured</span>
           <span class="pill">Veteran-Owned</span>
-          <span class="pill">On-site as needed</span>
+          <span class="pill">In-home help</span>
         </div>
       </div>
     </div>
+
     <div class="ctaRow" style="margin:0;">
-      <a href="#contact" class="btn primary">Book Your Free 15-Min Consultation</a>
+      <a href="#contact" class="btn primary" aria-label="Book your free consultation (limited slots)">Book Free 15‑Min Call (Limited Slots)</a>
+      <a class="btn call" href="tel:+17736698868" aria-label="Call SunCoast Tech Support">Call Now</a>
     </div>
   </div>
 </header>
@@ -416,139 +540,108 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <div>
-      <h1>Tech problems solved at your home or home office — without the stress.</h1>
+      <h1>Warm, friendly tech help at your home — so you can get back to your day.</h1>
+
       <p class="sub">
-        Clear, on-site IT help for homeowners, remote workers, and small businesses across the Clearwater area.
-        <strong>To see if your area is covered, check the FAQ.</strong>
+        If you searched “<strong>computer help near me</strong>” or “<strong>data recovery near me</strong>” — you’re in the right place.
+        We help homeowners across the Clearwater area with computers, Wi‑Fi, and saving important files.
       </p>
-      <p class="support">Two simple service packages. We come to you and handle it.</p>
+
+      <div class="urgency" role="status" aria-live="polite">
+        <span class="pulse" aria-hidden="true"></span>
+        Free 15‑minute call: <strong>limited weekly slots</strong> · Same‑day help when available
+      </div>
+
+      <p class="support">Two simple packages. Clear plan. No jargon. No pressure.</p>
 
       <div class="ctaRow">
-        <a class="btn primary" href="#contact">Book Your Free 15-Min Consultation</a>
-        <a class="btn call" href="tel:+17270000000">Call Now</a>
+        <a class="btn primary" href="#contact">Book Free 15‑Min Call (Limited Slots)</a>
+        <a class="btn call" href="tel:+17736698868">Call Now</a>
         <a class="btn secondary" href="#packageA">View packages</a>
+      </div>
+
+      <!-- Compact reassurance line -->
+      <div class="fine" style="margin-top:12px;">
+        You’ll work directly with a local technician — not a call center.
       </div>
     </div>
 
     <aside class="card">
-      <div class="valueGrid">
+<div class="valueGrid">
         <div class="mini">
-          <div class="k">Free consult</div>
+          <div class="k">Free call</div>
           <div class="v">15 minutes (new clients)</div>
         </div>
         <div class="mini">
-          <div class="k">On-site as needed</div>
-          <div class="v">Remote/phone when possible</div>
+          <div class="k">Help style</div>
+          <div class="v">In‑home + remote</div>
         </div>
         <div class="mini">
           <div class="k">Typical visit time</div>
           <div class="v">60–120 min</div>
         </div>
         <div class="mini">
-          <div class="k">Primary area</div>
-          <div class="v">Clearwater area</div>
+          <div class="k">Service area</div>
+          <div class="v">Clearwater + nearby</div>
         </div>
       </div>
       <div class="fine" style="padding:0 16px 16px;">
-        Clearwater area service. Not sure you're covered? Check the FAQ.
+        Not sure you’re covered? Check the FAQ for cities.
       </div>
     </aside>
   </section>
 
-
-  <!-- TRUST -->
+  <!-- TRUST + LOGOS -->
   <section class="section" id="trust" style="padding-top:10px;">
     <div class="card" style="padding:16px;">
-      <div class="pill" style="display:inline-flex; margin-bottom:10px;">Trusted local support</div>
-      <p class="lead" style="margin:0;">
-        <strong>Licensed • Insured • Veteran-Owned.</strong> You’ll work directly with an experienced local technician — not a call center or rotating contractors.
+      <div class="pill" style="display:inline-flex; margin-bottom:10px;">Trusted in-home support</div>
+      <p class="lead" style="margin:0 0 12px;">
+        <strong>Licensed • Insured • Veteran-Owned.</strong>
+        We work with the technology already in your home.
       </p>
-    </div>
-  </section>
 
-
-  <!-- GUARANTEE -->
-  <section class="section" id="guarantee">
-    <h2>Our Guarantee</h2>
-    <p class="lead">Clear expectations before you book.</p>
-    <div class="packages" style="grid-template-columns:1fr; gap:12px;">
-      <div class="card" style="padding:16px;">
-        <div class="guarantee">
-          <strong>🛡️ Guarantee (with conditions):</strong>
-          If we can’t safely locate and begin preserving your data during the visit,
-          you can stop and you won’t be charged beyond the new-client consultation.
-        </div>
-        <div class="guarantee" style="border-color: rgba(0,209,143,.55); background: linear-gradient(135deg, rgba(0,209,143,.16), rgba(255,255,255,.04));">
-          <strong>Trust:</strong> Licensed, insured, veteran-owned. You’ll work directly with an experienced local technician — not a call center or rotating contractors.
-        </div>
-        <div class="fine" style="margin-top:10px;">
-          Guarantee applies to the service visit. Parts, vendor limitations, and pre-existing hardware failures may affect outcomes. Scope is confirmed before proceeding.
-        </div>
+      <div class="fine" style="margin-top:10px;">
+        Tip: keep logos small and grayscale so the page stays calm (not salesy).
       </div>
     </div>
   </section>
 
+  <!-- GUARANTEE -->
+  <section class="section" id="guarantee">
+    <h2>Our Promise</h2>
+    <p class="lead">Clear expectations before you book.</p>
+
+    <div class="packages" style="grid-template-columns:1fr; gap:12px;">
+      <div class="card" style="padding:16px;">
+        <div class="guarantee">
+          <strong>✅ Clarity first:</strong> During the free call, we’ll confirm the right package, what to expect, and what it will cost — before scheduling.
+        </div>
+        <div class="guarantee" style="border-color: rgba(0,209,143,.55); background: linear-gradient(135deg, rgba(0,209,143,.16), rgba(255,255,255,.04));">
+          <strong>🧡 No stress:</strong> Friendly help, plain-English explanations, and we’ll confirm things are working before we wrap up.
+        </div>
+        <div class="fine" style="margin-top:10px;">
+          Parts, vendor limitations, and pre-existing hardware failures may affect outcomes. Scope is confirmed before proceeding.
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- PACKAGES -->
   <section class="section" id="packages">
     <h2>Choose Package A or Package B</h2>
     <p class="lead">
-      Package A is for immediate troubleshooting and repair. Package B is for saving family memories and clearing out old devices.
-      <br><strong>Both include:</strong> free 15-minute consultation (new clients). On-site support is provided <strong>as needed</strong> — if the issue can be resolved by phone or remotely, on-site is not required.
+      Package A is for immediate troubleshooting and “get it working again.”
+      Package B is for saving photos/documents and clearing out old devices.
+      <br><strong>Both include:</strong> a free 15‑minute call for new clients. In‑home service is provided <strong>as needed</strong> — if the issue can be resolved by phone/remote, we’ll do that first.
     </p>
 
     <div class="packages">
 
-      <!-- LEFT: Package A -->
+      <!-- Package A -->
       <div class="card pkg" id="packageA" aria-label="Package A - Troubleshooting">
         <div class="pkgHead">
           <div>
-            <div class="badge"><span class="dot" aria-hidden="true"></span>Package A · Troubleshooting & Repair</div>
-            <div class="pkgTitle">Fix the thing that’s stopping your day.</div>
-            <div class="pkgTagline">Clear plan. Fast fix. Confirmed before we leave.</div>
-          </div>
-          <div class="priceBox">
-            <div class="price">$179</div>
-            <div class="per">first 90 minutes · first available</div>
-          </div>
-        </div>
-
-        <div class="callouts">
-          <span class="pill">Free 15-min consult (new clients)</span>
-          <span class="pill">Remote/phone when possible</span>
-          <span class="pill">On-site as needed</span>
-        </div>
-
-        <div class="who">
-          <strong>Best for:</strong> “My computer/laptop is acting up, and I need help fast.”
-        </div>
-
-        <ul class="list">
-          <li><strong>Desktop & laptop troubleshooting</strong> (working or not)</li>
-          <li>Slow performance, pop-ups, login/account issues, email issues</li>
-          <li>Wi‑Fi/basic home office connectivity issues</li>
-          <li>Plain-English recap: what happened + what we did</li>
-          <li><strong>Not supported:</strong> broken monitors/printers (we don’t repair them)</li>
-        </ul>
-
-        
-
-        <div class="pkgCtas">
-          <a class="btn primary" href="#contact">Book Package A</a>
-          <a class="btn secondary" href="tel:+17270000000">Call Now</a>
-        </div>
-
-        <div class="fine" style="border-top:1px dashed var(--border); padding-top:10px; margin-top:10px;">
-          Additional computers can be handled during the same visit. Scope and pricing are confirmed during the free consultation.
-        </div>
-
-        </div>
-
-      <!-- RIGHT: Package B -->
-      <div class="card pkg" aria-label="Package B - Device Cleanup & Data Preservation">
-        <div class="pkgHead">
-          <div>
-            <div class="badge"><span class="dot" aria-hidden="true"></span>Package B · Device Cleanup & Data Preservation</div>
+            <div class="badge"><span class="dot" aria-hidden="true"></span><span class="pkgIcon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M7 13h10"/></svg></span>Package B · Device Cleanup & Data Preservation</div>
             <div class="pkgTitle">Keep the memories. Clear the clutter.</div>
             <div class="pkgTagline">Family photos, home videos, important documents — saved and organized.</div>
           </div>
@@ -559,30 +652,28 @@
         </div>
 
         <div class="callouts">
-          <span class="pill">Free 15-min consult (new clients)</span>
-          <span class="pill">Remote/phone when possible</span>
-          <span class="pill">On-site as needed</span>
+          <span class="pill">Free 15‑min call (new clients)</span>
+          <span class="pill">Multi-device friendly</span>
+          <span class="pill">Organized delivery</span>
         </div>
 
         <div class="who">
-          <strong>Best for:</strong> Old computers/laptops with family photos or videos you want to keep — but you don’t want the devices anymore.
+          <strong>Best for:</strong> Old computers with photos/videos you want to keep — but you don’t want the devices anymore.
         </div>
 
         <ul class="list">
           <li><strong>Find and gather</strong> photos, videos, and important documents</li>
           <li><strong>Combine</strong> files from multiple computers into one organized place</li>
-          <li><strong>Move your files</strong> to the medium you choose: USB, external drive, cloud, or disc (CD/DVD where applicable)</li>
+          <li><strong>Move your files</strong> to: USB, external drive, cloud, or disc (CD/DVD where applicable)</li>
           <li><strong>Prepare devices</strong> for recycling/disposal as part of the package</li>
           <li><strong>Optional secure wipe</strong> so personal data isn’t left behind</li>
           <li><strong>Macs:</strong> accepted for recycling only (no Mac repairs at this time)</li>
           <li><strong>Phones/handhelds:</strong> limited support, reviewed case-by-case</li>
         </ul>
 
-        
-
         <div class="pkgCtas">
           <a class="btn primary" href="#contact">Book Package B</a>
-          <a class="btn secondary" href="tel:+17270000000">Call Now</a>
+          <a class="btn secondary" href="tel:+17736698868">Call Now</a>
         </div>
 
         <div class="fine" style="border-top:1px dashed var(--border); padding-top:10px; margin-top:10px;">
@@ -590,77 +681,48 @@
         </div>
 
         <div class="fine"><strong>Note:</strong> Recycling is tied to a purchased package (not standalone).</div>
-</div>
+      </div>
 
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section class="section" id="reviews">
-    <details class="collapseBlock card" style="padding:16px;">
-      <summary style="font-weight:950; font-size:20px;">Reviews (tap to expand/collapse)</summary>
-      <div style="height:10px;"></div>
-<div class="reviews">
-      <div class="card review">
-        <div class="stars">★★★★★</div>
-        <blockquote>“He showed up on time, explained everything clearly, and my laptop was back to normal in under an hour.”</blockquote>
-        <div class="whoSaid">— Remote worker, Clearwater</div>
+  <!-- PARTNER BRANDS -->
+  <section class="section" id="brands" style="padding-top:8px;">
+    <div class="card" style="padding:16px;">
+      <div class="pill" style="display:inline-flex; margin-bottom:10px;">We support the tech already in your home</div>
+      <p class="lead" style="margin:0 0 12px;">Common brands we work with (and more):</p>
+<!-- NOTE: Add/replace these icon files in assets/brands/ when ready -->
+      <div class="logoStrip" aria-label="Common home technology brands">
+        <span class="logoPill"><span class="logoIcon" aria-hidden="true"></span>Microsoft</span>
+        <span class="logoPill"><span class="logoIcon" aria-hidden="true"></span>Apple</span>
+        <span class="logoPill"><span class="logoIcon" aria-hidden="true"></span>Android</span>
+        <span class="logoPill"><span class="logoIcon" aria-hidden="true"></span>Netgear</span>
+        <span class="logoPill"><span class="logoIcon" aria-hidden="true"></span>Ubiquiti</span>
+        <span class="logoPill"><span class="logoIcon" aria-hidden="true"></span>Spectrum</span>
+        <span class="logoPill"><span class="logoIcon" aria-hidden="true"></span>WOW</span>
       </div>
-      <div class="card review">
-        <div class="stars">★★★★★</div>
-        <blockquote>“We had years of family photos scattered across old computers. He consolidated everything and moved it to an external drive.”</blockquote>
-        <div class="whoSaid">— Homeowner, Dunedin</div>
-      </div>
-      <div class="card review">
-        <div class="stars">★★★★★</div>
-        <blockquote>“Direct help, no call center. Clear communication from start to finish.”</blockquote>
-        <div class="whoSaid">— Small business owner, Clearwater</div>
-      </div>
+
+      
     </div>
-      </details>
   </section>
 
-  <!-- WHAT HAPPENS NEXT -->
-  <section class="section" id="next">
-    <details class="collapseBlock card" style="padding:16px;">
-      <summary style="font-weight:950; font-size:20px;">What Happens After You Reach Out (tap to expand/collapse)</summary>
-      <div style="height:10px;"></div>
-<div class="steps">
-      <div class="card step">
-        <h3>1️⃣ Quick Conversation</h3>
-        <p>We start with a free 15-minute consultation to understand what you’re dealing with and confirm the best next step.</p>
-      </div>
-      <div class="card step">
-        <h3>2️⃣ Clear Recommendation</h3>
-        <p>You’ll get a straightforward explanation of what’s needed, which package fits, and what to expect — no jargon.</p>
-      </div>
-      <div class="card step">
-        <h3>3️⃣ On‑Site or Remote Support</h3>
-        <p>We come to your home or home office when needed — or help by phone/remote when appropriate — and take care of the issue efficiently.</p>
-      </div>
-      <div class="card step">
-        <h3>4️⃣ Wrap‑Up & Peace of Mind</h3>
-        <p>Before we finish, we confirm everything is working and answer any remaining questions so you’re not left guessing.</p>
-      </div>
-    </div>
-    </details>
-  </section>
+</section>
 
   <!-- CTA SECTION -->
   <section class="section" id="cta">
     <div class="card ctaPanel">
       <div style="position:relative; padding:18px;">
-        <h2 style="margin:0 0 6px;">Book your free 15-minute consultation</h2>
+        <h2 style="margin:0 0 6px;">Grab a free 15‑minute call (limited slots)</h2>
         <p class="lead" style="margin:0 0 14px;">
-          Tell us what’s going on and we’ll recommend the right package. No pressure — just clarity.
+          Tell us what’s going on and we’ll recommend the right package. Friendly help — and a clear next step.
         </p>
         <div class="ctaRow">
-          <a class="btn primary" href="#contact">Book Your Free 15-Min Consultation</a>
-          <a class="btn call" href="tel:+17270000000">Call Now</a>
+          <a class="btn primary" href="#contact">Book Free 15‑Min Call</a>
+          <a class="btn call" href="tel:+17736698868">Call Now</a>
           <a class="btn secondary" href="#faq">Check service areas</a>
         </div>
         <div class="fine">
-          Clearwater area service. Not sure you're covered? Check the FAQ.
+          Same‑day appointments available when schedule allows.
         </div>
       </div>
     </div>
@@ -683,17 +745,30 @@
           <li><strong>Safety Harbor</strong></li>
         </ul>
         <p style="margin-top:10px;">If you’re nearby and not listed, reach out — we may still be able to help.</p>
-        
       </details>
-
 
       <details>
         <summary>❓ What if I have more than one computer?</summary>
         <ul class="list" style="margin:10px 0 0; padding-left:18px;">
-          <li>We handle multiple computers during the same visit whenever possible.</li>
-          <li>We confirm device count, scope, and pricing during the free 15‑minute consultation.</li>
+          <li>Very common — we handle multiple computers during the same visit whenever possible.</li>
+          <li>We confirm device count, scope, and pricing during the free 15‑minute call.</li>
         </ul>
-        
+      </details>
+
+      <details>
+        <summary>❓ Do you offer “computer help near me open today” or “open now”?</summary>
+        <p>
+          We offer <strong>same‑day help when schedule allows</strong>. The fastest way is to call.
+          If you book the free call, choose “First available” and we’ll do our best to fit you in.
+        </p>
+      </details>
+
+      <details>
+        <summary>❓ Do you do data recovery and how does pricing work?</summary>
+        <p>
+          We help with <strong>data retrieval and preservation</strong> during Package B. Every device is different (drive health, encryption, damage),
+          so “cost per GB” isn’t a reliable way to price this. During the free call, we’ll confirm the scope and the safest next step.
+        </p>
       </details>
 
       <details>
@@ -702,7 +777,6 @@
           <li><strong>Credit card</strong> accepted.</li>
           <li>Payment is due at time of service unless otherwise arranged.</li>
         </ul>
-        
       </details>
 
       <details>
@@ -711,27 +785,14 @@
           <li>Package A: typically <strong>60–90 minutes</strong></li>
           <li>Package B: commonly <strong>90–180 minutes</strong> (depends on data size + number of devices)</li>
         </ul>
-        
       </details>
 
       <details>
-        <summary>❓ Is on-site service always required?</summary>
+        <summary>❓ Is in‑home service always required?</summary>
         <ul class="list" style="margin:10px 0 0; padding-left:18px;">
           <li>No. We start with phone/remote when appropriate.</li>
-          <li>On‑site support is provided <strong>as needed</strong>.</li>
+          <li>In‑home support is provided <strong>as needed</strong>.</li>
         </ul>
-        
-      </details>
-
-      <details>
-        <summary>❓ What devices do you service?</summary>
-        <ul class="list" style="margin:10px 0 0; padding-left:18px;">
-          <li>Desktop computers and laptops (working or broken)</li>
-          <li>No repair for broken monitors or printers</li>
-          <li>Macs: recycling only</li>
-          <li>Phones/handhelds: limited, case‑by‑case</li>
-        </ul>
-        
       </details>
 
       <details>
@@ -740,27 +801,26 @@
           <li>No — recycling is tied to a purchased package (A or B).</li>
           <li>Network equipment recycling (routers/switches/APs) is available for an additional cost when paired with a package.</li>
         </ul>
-        
       </details>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="section" id="contact">
-    <h2>Book your free 15-minute consultation</h2>
+    <h2>Book your free 15‑minute call (limited weekly slots)</h2>
     <p class="lead">
-      Tell us what’s going on. We’ll recommend Package A or B, set expectations, and schedule remote/phone help or on‑site support if needed.
+      Tell us what’s going on. We’ll recommend Package A or B, set expectations, and schedule remote help or an in‑home visit if needed.
       <br><strong>Clearwater area service — check the FAQ for covered locations.</strong>
     </p>
 
     <div class="contactGrid">
       <div class="card" style="padding:18px;">
         <form action="https://formspree.io/f/xdaolvby" method="POST" id="leadForm">
-          
           <input type="hidden" name="_subject" value="New SunCoast Tech Support Lead" />
           <input type="hidden" name="_next" value="https://www.suncoasttechsupport.net/thanks.html" />
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-<div class="row2">
+
+          <div class="row2">
             <div>
               <label for="name">Name</label>
               <input id="name" name="name" autocomplete="name" required />
@@ -806,8 +866,9 @@
 
           <div>
             <label for="details">What outcome do you want?</label>
-            <textarea id="details" name="details" placeholder="Example: 'Move family photos off 2 old laptops to an external drive' or 'Wi-Fi keeps dropping during work calls'." required></textarea>
+            <textarea id="details" name="details" placeholder="Example: 'Move family photos off 2 old laptops to an external drive' or 'Wi‑Fi keeps dropping during work calls'." required></textarea>
           </div>
+
           <div id="formSuccess" class="pill" style="display:none; border-color: rgba(0,209,143,.70); background: rgba(0,209,143,.14);" role="status" aria-live="polite">
             Thanks — we received your request. We’ll reach out shortly.
           </div>
@@ -815,9 +876,8 @@
             Something went wrong sending your request. Please call instead.
           </div>
 
-
           <div class="ctaRow" style="justify-content:space-between; align-items:center;">
-            <button class="btn primary" type="submit">Book Your Free 15-Min Consultation</button>
+            <button class="btn primary" type="submit">Book Free 15‑Min Call</button>
             <span class="pill">Response typically within 1 business day</span>
           </div>
 
@@ -827,12 +887,15 @@
 
       <div class="card" style="padding:18px;">
         <div class="pill" style="display:inline-flex; margin-bottom:10px;">Prefer the phone?</div>
-<div class="ctaRow" style="margin-top:0;">
-          <a class="btn call" href="tel:+17270000000">Call Now</a>
+        <div class="ctaRow" style="margin-top:0;">
+          <a class="btn call" href="tel:+17736698868">Call Now</a>
           <a class="btn secondary" href="#packageA">View packages</a>
         </div>
-<div class="fine">
-          Payment accepted: <strong>credit card</strong> or <strong></strong>.
+        <div class="fine">
+          Payment accepted: <strong>credit card</strong>.
+        </div>
+        <div class="fine" style="margin-top:10px;">
+          If you need “open today” help, calling is best.
         </div>
       </div>
     </div>
@@ -844,14 +907,19 @@
   <div class="wrap">
     <div class="footRow">
       <div>© <span id="year"></span> SunCoast Tech Support · Licensed · Insured · Veteran-Owned</div>
-      <div class="pill">Free 15-min consult (new clients)</div>
+      <div class="pill">Free 15‑min call (new clients) · Limited slots</div>
     </div>
     <div class="fine" style="margin-top:10px;">
-      You’ll work directly with an experienced local technician — not a call center or rotating contractors.
+      You’ll work directly with a local technician — not a call center.
     </div>
     <div class="fine" style="margin-top:10px;">
       Disclaimer: Services are provided on a best-effort basis. Some issues may require parts, vendor support, or extended diagnostics. Scope is confirmed before proceeding.
+    
+    <div class="fine" style="margin-top:10px;">
+      <a href="#top" class="pill" style="display:inline-flex;">Back to top</a>
     </div>
+
+</div>
   </div>
 </footer>
 
@@ -860,7 +928,20 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Option A: inline thank-you message (no page redirect)
+  // Compact header on scroll
+  (function(){
+    var header = document.getElementById("siteHeader");
+    if(!header) return;
+    var last = 0;
+    window.addEventListener("scroll", function(){
+      var y = window.scrollY || 0;
+      if (y > 24) header.classList.add("is-compact");
+      else header.classList.remove("is-compact");
+      last = y;
+    }, { passive:true });
+  })();
+
+  // Formspree AJAX submit with fallback
   (function() {
     var form = document.getElementById("leadForm") || document.querySelector("#contact form");
     if (!form) return;
@@ -868,9 +949,8 @@
     var success = document.getElementById("formSuccess");
     var errorBox = document.getElementById("formError");
     var submitBtn = form.querySelector('button[type="submit"]');
-    var originalBtnText = submitBtn ? submitBtn.textContent : "Book Your Free 15-Min Consultation";
+    var originalBtnText = submitBtn ? submitBtn.textContent : "Book Free 15‑Min Call";
 
-    // Serialize form to JSON (per Formspree AJAX guidance)
     function formToJSON(formEl) {
       var data = {};
       var fd = new FormData(formEl);
@@ -918,20 +998,13 @@
           form.reset();
           if (window.location.hash !== "#contact") window.location.hash = "contact";
         } else {
-          var text = "";
-          try { text = await resp.text(); } catch(_) {}
-          console.warn("Formspree error:", resp.status, text);
           if (errorBox) errorBox.style.display = "inline-flex";
-
-          // Fallback: native submit (reliable)
           form.dataset.fallback = "1";
           form.removeEventListener("submit", handleSubmit);
           form.submit();
         }
       } catch (err) {
-        console.warn("Form submit failed:", err);
         if (errorBox) errorBox.style.display = "inline-flex";
-
         form.dataset.fallback = "1";
         form.removeEventListener("submit", handleSubmit);
         form.submit();
@@ -949,7 +1022,7 @@
 
 <div class="mobileBar" role="navigation" aria-label="Quick actions">
   <a class="btn call" href="tel:+17736698868" aria-label="Call SunCoast Tech Support">Call Now</a>
-  <a class="btn primary" href="#contact" aria-label="Book a free 15-minute consultation">Book Free Consult</a>
+  <a class="btn primary" href="#contact" aria-label="Book a free 15-minute consultation">Book Free Call</a>
 </div>
 
 </body>
