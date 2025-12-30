@@ -335,6 +335,49 @@
       font-size:14px;
     }
     .footRow{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; }
+  
+    /* ===== Mobile accessibility & conversion ===== */
+    @media (max-width: 720px){
+      body{ font-size:19px; }
+      .nav{ padding:10px 16px; }
+      .logo-img{ width:44px; height:44px; }
+
+      /* Reduce header crowding */
+      .tagline-badges{ display:none; }
+
+      /* Keep only Call Now in header on mobile (Book stays in hero + bottom bar) */
+      header .ctaRow a.btn.primary{ display:none; }
+      header .ctaRow{ gap:8px; }
+      header .ctaRow a.btn.call{ padding:12px 14px; }
+
+      /* Breathing room for fixed bottom bar */
+      main.wrap{ padding-bottom:88px; }
+    }
+
+    /* Collapsing header on scroll */
+    header.is-compact .nav{ padding:8px 16px; }
+    header.is-compact .logo-img{ width:36px; height:36px; }
+    header.is-compact .tagline-badges{ display:none; }
+    header.is-compact .btn{ padding:10px 12px; font-size:15px; }
+
+    /* Mobile sticky bottom CTA bar */
+    .mobileBar{
+      position:fixed;
+      left:12px; right:12px; bottom:12px;
+      display:none;
+      gap:10px;
+      padding:10px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(5,8,20,.86);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+      z-index:999;
+    }
+    .mobileBar a{ flex:1; }
+    @media (max-width: 720px){
+      .mobileBar{ display:flex; }
+    }
   </style>
 </head>
 
@@ -462,7 +505,7 @@
           Additional computers can be handled during the same visit. Scope and pricing are confirmed during the free consultation.
         </div>
 
-        <div class="fine"><strong>Payment:</strong> credit card or cash.</div>
+        <div class="fine"><strong>Payment:</strong> credit card.</div>
       </div>
 
       <!-- RIGHT: Package B -->
@@ -616,7 +659,7 @@
       <details>
         <summary>❓ What payment methods do you accept?</summary>
         <p>
-          We accept <strong>credit card</strong> and <strong>cash</strong>. Payment is due at time of service unless otherwise arranged.
+          We accept <strong>credit card</strong>.. Payment is due at time of service unless otherwise arranged.
         </p>
       </details>
 
@@ -668,7 +711,7 @@
         <form action="https://formspree.io/f/xdaolvby" method="POST" id="leadForm">
           
           <input type="hidden" name="_subject" value="New SunCoast Tech Support Lead" />
-          <input type="hidden" name="_next" value="https://www.suncoasttechsupport.net/#contact" />
+          <input type="hidden" name="_next" value="https://www.suncoasttechsupport.net/thanks.html" />
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 <div class="row2">
             <div>
@@ -865,6 +908,11 @@
     form.addEventListener("submit", handleSubmit);
   })();
 </script>
+
+<div class="mobileBar" role="navigation" aria-label="Quick actions">
+  <a class="btn call" href="tel:+17736698868" aria-label="Call SunCoast Tech Support">Call Now</a>
+  <a class="btn primary" href="#contact" aria-label="Book a free 15-minute consultation">Book Free Consult</a>
+</div>
 
 </body>
 </html>
